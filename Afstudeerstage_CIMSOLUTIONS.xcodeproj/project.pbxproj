@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		755CCBE8260B663900F43A5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBE7260B663900F43A5A /* AppDelegate.swift */; };
 		755CCBEA260B663900F43A5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBE9260B663900F43A5A /* SceneDelegate.swift */; };
-		755CCBEC260B663900F43A5A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBEB260B663900F43A5A /* ViewController.swift */; };
+		755CCBEC260B663900F43A5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBEB260B663900F43A5A /* HomeViewController.swift */; };
 		755CCBEF260B663900F43A5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755CCBED260B663900F43A5A /* Main.storyboard */; };
 		755CCBF1260B663B00F43A5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 755CCBF0260B663B00F43A5A /* Assets.xcassets */; };
 		755CCBF4260B663B00F43A5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 755CCBF2260B663B00F43A5A /* LaunchScreen.storyboard */; };
 		755CCBFF260B663B00F43A5A /* Afstudeerstage_CIMSOLUTIONSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBFE260B663B00F43A5A /* Afstudeerstage_CIMSOLUTIONSTests.swift */; };
 		755CCC0A260B663B00F43A5A /* Afstudeerstage_CIMSOLUTIONSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC09260B663B00F43A5A /* Afstudeerstage_CIMSOLUTIONSUITests.swift */; };
+		755CCC1B260B66CC00F43A5A /* Betaaltarief.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC1A260B66CC00F43A5A /* Betaaltarief.swift */; };
+		755CCC34260BE49A00F43A5A /* ParkerenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC33260BE49A00F43A5A /* ParkerenViewController.swift */; };
+		755CCC39260BE4B200F43A5A /* GegevensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC38260BE4B200F43A5A /* GegevensViewController.swift */; };
+		755CCC3E260BE4BD00F43A5A /* SaldoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC3D260BE4BD00F43A5A /* SaldoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 		755CCBE4260B663900F43A5A /* Afstudeerstage_CIMSOLUTIONS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Afstudeerstage_CIMSOLUTIONS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		755CCBE7260B663900F43A5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		755CCBE9260B663900F43A5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		755CCBEB260B663900F43A5A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		755CCBEB260B663900F43A5A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		755CCBEE260B663900F43A5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		755CCBF0260B663B00F43A5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		755CCBF3260B663B00F43A5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		755CCC05260B663B00F43A5A /* Afstudeerstage_CIMSOLUTIONSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Afstudeerstage_CIMSOLUTIONSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		755CCC09260B663B00F43A5A /* Afstudeerstage_CIMSOLUTIONSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Afstudeerstage_CIMSOLUTIONSUITests.swift; sourceTree = "<group>"; };
 		755CCC0B260B663B00F43A5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		755CCC1A260B66CC00F43A5A /* Betaaltarief.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Betaaltarief.swift; sourceTree = "<group>"; };
+		755CCC33260BE49A00F43A5A /* ParkerenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkerenViewController.swift; sourceTree = "<group>"; };
+		755CCC38260BE4B200F43A5A /* GegevensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GegevensViewController.swift; sourceTree = "<group>"; };
+		755CCC3D260BE4BD00F43A5A /* SaldoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaldoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +107,13 @@
 		755CCBE6260B663900F43A5A /* Afstudeerstage_CIMSOLUTIONS */ = {
 			isa = PBXGroup;
 			children = (
-				755CCBE7260B663900F43A5A /* AppDelegate.swift */,
-				755CCBE9260B663900F43A5A /* SceneDelegate.swift */,
-				755CCBEB260B663900F43A5A /* ViewController.swift */,
+				755CCC24260BE14900F43A5A /* Controllers */,
+				755CCC23260BE13D00F43A5A /* Views */,
+				755CCC22260BE13100F43A5A /* Models */,
+				755CCC21260BE12400F43A5A /* ViewModels */,
+				755CCC20260BE10F00F43A5A /* Managers */,
+				755CCC1F260BE0F100F43A5A /* Recources */,
 				755CCBED260B663900F43A5A /* Main.storyboard */,
-				755CCBF0260B663B00F43A5A /* Assets.xcassets */,
-				755CCBF2260B663B00F43A5A /* LaunchScreen.storyboard */,
 				755CCBF5260B663B00F43A5A /* Info.plist */,
 			);
 			path = Afstudeerstage_CIMSOLUTIONS;
@@ -126,6 +135,57 @@
 				755CCC0B260B663B00F43A5A /* Info.plist */,
 			);
 			path = Afstudeerstage_CIMSOLUTIONSUITests;
+			sourceTree = "<group>";
+		};
+		755CCC1F260BE0F100F43A5A /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				755CCBE7260B663900F43A5A /* AppDelegate.swift */,
+				755CCBE9260B663900F43A5A /* SceneDelegate.swift */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
+		755CCC20260BE10F00F43A5A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				755CCBF0260B663B00F43A5A /* Assets.xcassets */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		755CCC21260BE12400F43A5A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		755CCC22260BE13100F43A5A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				755CCC1A260B66CC00F43A5A /* Betaaltarief.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		755CCC23260BE13D00F43A5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				755CCBF2260B663B00F43A5A /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		755CCC24260BE14900F43A5A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				755CCBEB260B663900F43A5A /* HomeViewController.swift */,
+				755CCC33260BE49A00F43A5A /* ParkerenViewController.swift */,
+				755CCC38260BE4B200F43A5A /* GegevensViewController.swift */,
+				755CCC3D260BE4BD00F43A5A /* SaldoViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +318,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				755CCBEC260B663900F43A5A /* ViewController.swift in Sources */,
+				755CCC39260BE4B200F43A5A /* GegevensViewController.swift in Sources */,
+				755CCC3E260BE4BD00F43A5A /* SaldoViewController.swift in Sources */,
+				755CCBEC260B663900F43A5A /* HomeViewController.swift in Sources */,
+				755CCC1B260B66CC00F43A5A /* Betaaltarief.swift in Sources */,
 				755CCBE8260B663900F43A5A /* AppDelegate.swift in Sources */,
+				755CCC34260BE49A00F43A5A /* ParkerenViewController.swift in Sources */,
 				755CCBEA260B663900F43A5A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
