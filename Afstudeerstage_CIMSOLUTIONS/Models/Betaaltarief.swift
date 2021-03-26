@@ -21,7 +21,7 @@ func getTestAllTarieven(_ completion: @escaping ([Betaaltarief]) -> ()) {
 
                       do {
                          let res = try JSONDecoder().decode([Betaaltarief].self, from: data)
-                        print(res)
+                        print(res.self)
                         completion(res)
                         return
                       } catch let error {

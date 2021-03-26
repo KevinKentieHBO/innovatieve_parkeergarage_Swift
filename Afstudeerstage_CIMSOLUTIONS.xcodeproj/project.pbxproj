@@ -19,6 +19,8 @@
 		755CCC34260BE49A00F43A5A /* ParkerenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC33260BE49A00F43A5A /* ParkerenViewController.swift */; };
 		755CCC39260BE4B200F43A5A /* GegevensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC38260BE4B200F43A5A /* GegevensViewController.swift */; };
 		755CCC3E260BE4BD00F43A5A /* SaldoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC3D260BE4BD00F43A5A /* SaldoViewController.swift */; };
+		75C0EDF6260CC3A200483DA2 /* Parkeergarage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0EDF5260CC3A200483DA2 /* Parkeergarage.swift */; };
+		75C0EDFB260DE63E00483DA2 /* ReserverenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0EDFA260DE63E00483DA2 /* ReserverenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		755CCC33260BE49A00F43A5A /* ParkerenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkerenViewController.swift; sourceTree = "<group>"; };
 		755CCC38260BE4B200F43A5A /* GegevensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GegevensViewController.swift; sourceTree = "<group>"; };
 		755CCC3D260BE4BD00F43A5A /* SaldoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaldoViewController.swift; sourceTree = "<group>"; };
+		75C0EDF5260CC3A200483DA2 /* Parkeergarage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parkeergarage.swift; sourceTree = "<group>"; };
+		75C0EDFA260DE63E00483DA2 /* ReserverenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserverenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				755CCC1A260B66CC00F43A5A /* Betaaltarief.swift */,
+				75C0EDF5260CC3A200483DA2 /* Parkeergarage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				755CCC33260BE49A00F43A5A /* ParkerenViewController.swift */,
 				755CCC38260BE4B200F43A5A /* GegevensViewController.swift */,
 				755CCC3D260BE4BD00F43A5A /* SaldoViewController.swift */,
+				75C0EDFA260DE63E00483DA2 /* ReserverenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -324,7 +330,9 @@
 				755CCC1B260B66CC00F43A5A /* Betaaltarief.swift in Sources */,
 				755CCBE8260B663900F43A5A /* AppDelegate.swift in Sources */,
 				755CCC34260BE49A00F43A5A /* ParkerenViewController.swift in Sources */,
+				75C0EDFB260DE63E00483DA2 /* ReserverenViewController.swift in Sources */,
 				755CCBEA260B663900F43A5A /* SceneDelegate.swift in Sources */,
+				75C0EDF6260CC3A200483DA2 /* Parkeergarage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
