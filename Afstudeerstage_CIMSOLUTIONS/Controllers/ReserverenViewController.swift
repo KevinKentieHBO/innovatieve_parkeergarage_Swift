@@ -27,12 +27,16 @@ class ReserverenViewController: UIViewController {
     //Wanneer pagina geladen wordt
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         parkeerGarageLabel.text = parkeergarageGekozen.parkeergarage_Naam
         LocatieLabel.text = parkeergarageGekozen.parkeergarage_Locatie
         ParkeerplekkenLabel.text = String(parkeergarageGekozen.parkeergarage_Aantal_Plaatsen)
         OpeningstijdLabel.text = parkeergarageGekozen.parkeergarage_Opening + " - " + parkeergarageGekozen.parkeergarage_Sluiting
         ReserveerButton.layer.cornerRadius = 4
+        EindTijdTxT.text = nil
+        DatumTxT.text = nil
         createDataPicker()
+        createDataPickerEind()
         // Do any additional setup after loading the view.
     }
     
@@ -47,7 +51,6 @@ class ReserverenViewController: UIViewController {
         DatumTxT.inputAccessoryView = toolbar
         datePicker.locale = NSLocale(localeIdentifier: "nl") as Locale
         datePicker.minimumDate = Date()
-        //datePicker.minuteInterval = 5
         DatumTxT.inputView = datePicker
         datePicker.datePickerMode = .dateAndTime
     }
@@ -95,19 +98,34 @@ class ReserverenViewController: UIViewController {
     }
     
     @IBAction func maakReservering(_ sender: Any) {
-        let tijdFormatter = DateFormatter()
-        let datumFormatter = DateFormatter()
-        tijdFormatter.dateFormat = "HH:mm"
-        datumFormatter.dateFormat = "dd-MM-yyyy"
-        let gereserveerdeTijd = tijdFormatter.string(from: datePicker.date)
-        let gereserveerdeTijdEind = tijdFormatter.string(from: datePickerEind.date)
-        let gereserveerdeDatum = datumFormatter.string(from: datePicker.date)
-        print(gereserveerdeDatum)
-        print(gereserveerdeTijd)
+        if DatumTxT.text == "" || EindTijdTxT.text == ""{
+            creareAlert(title: "Error", message: "Vul de invoervelden in voor het bevestigen van de reservering")
+        }else{
+            let tijdFormatter = DateFormatter()
+            let datumFormatter = DateFormatter()
+            tijdFormatter.dateFormat = "HH:mm"
+            datumFormatter.dateFormat = "dd-MM-yyyy"
+            let gereserveerdeTijd = tijdFormatter.string(from: datePicker.date)
+            let gereserveerdeTijdEind = tijdFormatter.string(from: datePickerEind.date)
+            let gereserveerdeDatum = datumFormatter.string(from: datePicker.date)
+            print(gereserveerdeDatum)
+            print(gereserveerdeTijd)
+            
+            let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id: 1)
+            
+                createReservering(res: res)
+        }
+    }
+    
+    func creareAlert(title: String, message: String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id: 1)
+        alert.addAction(UIAlertAction(title: "Oke", style: .default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
         
-        createReservering(res: res)
+        self.present(alert, animated: true, completion: nil)
     }
 
     
