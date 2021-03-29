@@ -110,8 +110,8 @@ class ReserverenViewController: UIViewController {
             let gereserveerdeDatum = datumFormatter.string(from: datePicker.date)
             print(gereserveerdeDatum)
             print(gereserveerdeTijd)
-            
-            let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id: 1)
+            print(parkeergarageGekozen.parkeergarage_Id)
+            let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id: 1, reservering_Parkeergarage_Id: parkeergarageGekozen.parkeergarage_Id)
             
                 createReservering(res: res)
         }
