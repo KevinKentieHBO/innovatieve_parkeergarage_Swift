@@ -24,10 +24,10 @@ class ReserverenViewController: UIViewController {
     let datePicker = UIDatePicker()
     let datePickerEind = UIDatePicker()
     
+    
     //Wanneer pagina geladen wordt
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true
         parkeerGarageLabel.text = parkeergarageGekozen.parkeergarage_Naam
         LocatieLabel.text = parkeergarageGekozen.parkeergarage_Locatie
         ParkeerplekkenLabel.text = String(parkeergarageGekozen.parkeergarage_Aantal_Plaatsen)
@@ -37,6 +37,7 @@ class ReserverenViewController: UIViewController {
         DatumTxT.text = nil
         createDataPicker()
         createDataPickerEind()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -49,6 +50,7 @@ class ReserverenViewController: UIViewController {
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneBtn], animated: true)
         DatumTxT.inputAccessoryView = toolbar
+        datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = NSLocale(localeIdentifier: "nl") as Locale
         datePicker.minimumDate = Date()
         DatumTxT.inputView = datePicker
@@ -78,6 +80,7 @@ class ReserverenViewController: UIViewController {
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedEind))
         toolbar.setItems([doneBtn], animated: true)
         EindTijdTxT.inputAccessoryView = toolbar
+        datePickerEind.preferredDatePickerStyle = .wheels
         datePickerEind.locale = NSLocale(localeIdentifier: "nl") as Locale
         datePickerEind.minimumDate = datePicker.date
         //datePickerEind.minuteInterval = 5
