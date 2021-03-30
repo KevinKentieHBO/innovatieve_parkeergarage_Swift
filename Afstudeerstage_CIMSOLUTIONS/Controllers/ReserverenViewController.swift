@@ -35,6 +35,7 @@ class ReserverenViewController: UIViewController {
         ReserveerButton.layer.cornerRadius = 4
         EindTijdTxT.text = nil
         DatumTxT.text = nil
+        EindTijdTxT.isEnabled = false
         createDataPicker()
         createDataPickerEind()
         
@@ -46,7 +47,6 @@ class ReserverenViewController: UIViewController {
         
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
-        
         let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
         toolbar.setItems([doneBtn], animated: true)
         DatumTxT.inputAccessoryView = toolbar
@@ -65,9 +65,12 @@ class ReserverenViewController: UIViewController {
         formatter.timeStyle = .short
         formatter.timeZone = .current
         formatter.locale = NSLocale(localeIdentifier: "nl") as Locale
+        datePickerChanged()
         DatumTxT.text = formatter.string(from: datePicker.date)
         self.view.endEditing(true)
         EindTijdTxT.text = nil
+        EindTijdTxT.isEnabled = true
+        EindTijdTxT.backgroundColor = .white
         createDataPickerEind()
     }
     
@@ -130,7 +133,29 @@ class ReserverenViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func datePickerChanged() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        formatter.locale = NSLocale(localeIdentifier: "nl") as Locale
+        let begintijd = formatter.date(from: parkeergarageGekozen.parkeergarage_Opening)
+        let eindtijd = formatter.date(from: parkeergarageGekozen.parkeergarage_Sluiting)
+        
+        var components = Calendar.current.dateComponents([.hour, .minute, .month, .year, .day], from: datePicker.date)
+        let opening = Calendar.current.dateComponents([.hour, .minute], from: begintijd!)
+        let sluiting = Calendar.current.dateComponents([.hour, .minute], from: eindtijd!)
 
+        if components.hour! < opening.hour! {
+            components.hour = opening.hour!
+            components.minute = opening.minute!
+            datePicker.setDate(Calendar.current.date(from: components)!, animated: true)
+        }
+        else if components.hour! >= sluiting.hour! && components.minute! > sluiting.minute! {
+            components.hour = sluiting.hour!
+            components.minute = sluiting.minute!
+            datePicker.setDate(Calendar.current.date(from: components)!, animated: true)
+        }
+    }
     
 
     /*
