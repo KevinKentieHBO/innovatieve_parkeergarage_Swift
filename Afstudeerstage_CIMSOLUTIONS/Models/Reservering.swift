@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Object reservering
 struct Reservering : Decodable{
     let reservering_Id: Int
     let reservering_Parkeerplaats_Id: Int
@@ -16,6 +17,7 @@ struct Reservering : Decodable{
     let reservering_Auto_Id: Int
 }
 
+//Object reservering voor de info pagina
 struct InfoReservering : Decodable{
     let reservering_Id: Int
     let reservering_Parkeerplaats_Id: Int
@@ -28,6 +30,7 @@ struct InfoReservering : Decodable{
     let reservering_ParkeergarageLocatie: String
 }
 
+//Object reservering voor het wegschrijven
 struct makeReservering : Decodable{
     let reservering_Begintijd: String
     let reservering_Eindtijd: String
@@ -36,6 +39,7 @@ struct makeReservering : Decodable{
     let reservering_Parkeergarage_Id: Int
 }
 
+//Aanmaken van een Reservering met een Rest Api
 func createReservering(res : makeReservering) {
     let restURL = "http://localhost:8080/reservering/"+res.reservering_Datum+"/"+res.reservering_Begintijd+"/"+res.reservering_Eindtijd+"/"+String(res.reservering_Auto_Id)+"/"+String(res.reservering_Parkeergarage_Id)
     print(restURL)
@@ -49,6 +53,7 @@ func createReservering(res : makeReservering) {
     }
 }
 
+//Ophalen van alle reserveringen van een gebruiker met het kenteken
 func getReserveringenVanGebruiker(_ completion: @escaping ([InfoReservering]) -> ()) {
     let autoId = 1
     if let url = URL(string: "http://localhost:8080/reserveringen/"+String(autoId)) {

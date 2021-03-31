@@ -7,9 +7,10 @@
 
 import UIKit
 
+//Controller voor het geregelen van de info van een individuele reservering
 class InfoReserveringViewController: UIViewController {
     
-    
+    //opzetten van de interface attributen
     @IBOutlet weak var TitelInfoReservering: UILabel!
     @IBOutlet weak var BegintijdReservering: UILabel!
     @IBOutlet weak var DatumReservering: UILabel!
@@ -18,10 +19,14 @@ class InfoReserveringViewController: UIViewController {
     @IBOutlet weak var LocatieReservering: UILabel!
     @IBOutlet weak var ParkeerplaatsReservering: UILabel!
     
+    //Lege reservering om uiteindelijk de gekozen reservering in te zetten.
     var gekozenReservering = InfoReservering(reservering_Id: 0, reservering_Parkeerplaats_Id: 0, reservering_Begintijd: "", reservering_Eindtijd: "", reservering_Datum: "", reservering_Parkeerplaats_laag: 0, reservering_Parkeerplaats_plek: 0, reservering_Parkeergarage: "", reservering_ParkeergarageLocatie: "")
 
+    //Wanneer pagina geladen wordt
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //zet alle interface attributen
         TitelInfoReservering.text = gekozenReservering.reservering_Datum
         BegintijdReservering.text = gekozenReservering.reservering_Begintijd
         EindtijdReservering.text = gekozenReservering.reservering_Eindtijd
@@ -29,19 +34,5 @@ class InfoReserveringViewController: UIViewController {
         LocatieReservering.text = gekozenReservering.reservering_ParkeergarageLocatie
         ParkeergarageReservering.text = gekozenReservering.reservering_Parkeergarage
         ParkeerplaatsReservering.text = String(gekozenReservering.reservering_Parkeerplaats_laag)+"-"+String(gekozenReservering.reservering_Parkeerplaats_plek)
-
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

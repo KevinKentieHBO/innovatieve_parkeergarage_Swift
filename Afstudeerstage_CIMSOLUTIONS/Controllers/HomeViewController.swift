@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Controller voor het aansturen van de homepagina
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {

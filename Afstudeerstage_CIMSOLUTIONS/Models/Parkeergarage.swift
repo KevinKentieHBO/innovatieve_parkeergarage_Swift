@@ -7,6 +7,7 @@
 
 import Foundation
 
+//Object parkeergarage
 struct Parkeergarage : Decodable {
         let parkeergarage_Id: Int
         let parkeergarage_Naam: String
@@ -17,6 +18,7 @@ struct Parkeergarage : Decodable {
         let parkeergarage_Sluiting: String
 }
 
+//geef alle parkeergarages terug met een Rest Api
 func getAllParkeergarages(_ completion: @escaping ([Parkeergarage]) -> ()) {
             if let url = URL(string: "http://localhost:8080/parkeergarages") {
                URLSession.shared.dataTask(with: url) { data, response, error in

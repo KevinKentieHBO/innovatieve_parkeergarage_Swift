@@ -9,16 +9,23 @@ import UIKit
 
 class MijnReserveringenViewController: UIViewController {
 
+    //Initializeren van de verschillende interface attributen
     @IBOutlet weak var ParkeergarageDatumCell: UILabel!
     @IBOutlet weak var ParkeergarageNaamCell: UILabel!
     @IBOutlet weak var MijnReserveringenTable: UITableView!
     
+    //lege lijst met Reserveringen van de gebruiker
     private var data: [InfoReservering] = []
     
+    //wanneer de pagina geladen wordt
     override func viewDidLoad() {
+        
+        //zet de styling binnen een cel
         let nib = UINib(nibName: "MijnReserveringenTableViewCell", bundle: nil)
         MijnReserveringenTable.register(nib, forCellReuseIdentifier: "MijnReserveringenTableViewCell")
         self.MijnReserveringenTable.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        //Haal de reserveringen van de gebruiker op en zet deze in de lijst
         getReserveringenVanGebruiker { (array) in
             DispatchQueue.main.async {
             self.data = array
@@ -26,14 +33,18 @@ class MijnReserveringenViewController: UIViewController {
         }
     }
         super.viewDidLoad()
+        
+        //Zet de tabel in de interface
         MijnReserveringenTable.delegate = self
         MijnReserveringenTable.dataSource = self
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
 }
-    
+
+//Zet de tabel in de storyboard
 extension MijnReserveringenViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -45,30 +56,20 @@ extension MijnReserveringenViewController: UITableViewDelegate{
     }
 }
 
+//Data in de cellen zetten
 extension MijnReserveringenViewController: UITableViewDataSource{
+    //toon x aantal cellen
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
     
+    //zet de data in de cellen.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MijnReserveringenTableViewCell",
                                                  for: indexPath) as! MijnReserveringenTableViewCell
         cell.CellDatum.text = data[indexPath.row].reservering_Datum
         cell.CellTijd.text = data[indexPath.row].reservering_Begintijd
         cell.CellParkeergarage.text = data[indexPath.row].reservering_Parkeergarage
-        //cell.textLabel?.text = data[indexPath.row].reservering_Datum
         return cell
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
