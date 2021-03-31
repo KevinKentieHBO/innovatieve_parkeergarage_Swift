@@ -16,9 +16,14 @@ class MijnReserveringenViewController: UIViewController {
     
     //lege lijst met Reserveringen van de gebruiker
     private var data: [InfoReservering] = []
+    var refreshControl = UIRefreshControl()
     
     //wanneer de pagina geladen wordt
     override func viewDidLoad() {
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        MijnReserveringenTable.addSubview(refreshControl)
         
         //zet de styling binnen een cel
         let nib = UINib(nibName: "MijnReserveringenTableViewCell", bundle: nil)
@@ -41,6 +46,11 @@ class MijnReserveringenViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        self.viewDidLoad()
+        self.refreshControl.endRefreshing();
     }
 }
 
