@@ -72,3 +72,23 @@ func getReserveringenVanGebruiker(_ completion: @escaping ([InfoReservering]) ->
        }.resume()
     }
 }
+    
+//Ophalen van een reservering die zojuist gemaakt is
+func getZojuistGemaakteReservering(datum : String, begintijd : String, eindtijd : String, parkeergarageid : Int, _ completion: @escaping (InfoReservering) -> ()) {
+    let autoId = 1
+    if let url = URL(string:"http://localhost:8080//reservering/get/\(datum)/\(begintijd)/\(eindtijd)/\(autoId)/\(parkeergarageid)") {
+       URLSession.shared.dataTask(with: url) { data, response, error in
+          if let data = data {
+
+              do {
+                 let res = try JSONDecoder().decode(InfoReservering.self, from: data)
+                print(res)
+                completion(res)
+                return
+              } catch let error {
+                 print(error)
+              }
+          }
+       }.resume()
+    }
+}

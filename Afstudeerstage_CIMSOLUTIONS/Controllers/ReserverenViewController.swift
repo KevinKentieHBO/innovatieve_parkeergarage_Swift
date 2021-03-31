@@ -143,8 +143,17 @@ class ReserverenViewController: UIViewController {
 
             //functie die de reservering naar de database voert.
             let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id: 1, reservering_Parkeergarage_Id: parkeergarageGekozen.parkeergarage_Id)
-            
                 createReservering(res: res)
+            
+            //Wacht tot reservering is doorgevoerd
+            sleep(1);
+            
+            //Navigeer naar de zojuist gemaakte reservering
+            getZojuistGemaakteReservering(datum: gereserveerdeDatum, begintijd: gereserveerdeTijd, eindtijd: gereserveerdeTijdEind, parkeergarageid: parkeergarageGekozen.parkeergarage_Id){(array) in
+                DispatchQueue.main.async {
+                    self.verwijsNaarInfo(res: array)
+                }
+            }
         }
     }
     
@@ -192,15 +201,11 @@ class ReserverenViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func verwijsNaarInfo(res : InfoReservering){
+        let reservering = res
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "infoReserverenVCIdentifier") as! InfoReserveringViewController
+        newVC.gekozenReservering = reservering
+        self.show(newVC, sender: self)
     }
-    */
-
 }
