@@ -21,10 +21,17 @@ class InfoReserveringViewController: UIViewController {
     
     //Lege reservering om uiteindelijk de gekozen reservering in te zetten.
     var gekozenReservering = InfoReservering(reservering_Id: 0, reservering_Parkeerplaats_Id: 0, reservering_Begintijd: "", reservering_Eindtijd: "", reservering_Datum: "", reservering_Parkeerplaats_laag: 0, reservering_Parkeerplaats_plek: 0, reservering_Parkeergarage: "", reservering_ParkeergarageLocatie: "")
+    var nieuweReservering : Bool = false
 
     //Wanneer pagina geladen wordt
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(nieuweReservering){
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItem.Style.plain, target: self, action: #selector(InfoReserveringViewController.goToSecond(_:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
+        }
         
         //zet alle interface attributen
         TitelInfoReservering.text = gekozenReservering.reservering_Datum
@@ -34,5 +41,9 @@ class InfoReserveringViewController: UIViewController {
         LocatieReservering.text = gekozenReservering.reservering_ParkeergarageLocatie
         ParkeergarageReservering.text = gekozenReservering.reservering_Parkeergarage
         ParkeerplaatsReservering.text = String(gekozenReservering.reservering_Parkeerplaats_laag)+"-"+String(gekozenReservering.reservering_Parkeerplaats_plek)
+    }
+    
+    @IBAction func goToSecond(_ sender: Any) {
+        tabBarController?.selectedIndex = 0
     }
 }

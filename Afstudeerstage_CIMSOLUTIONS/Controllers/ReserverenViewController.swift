@@ -206,6 +206,7 @@ class ReserverenViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let newVC = storyboard.instantiateViewController(withIdentifier: "infoReserverenVCIdentifier") as! InfoReserveringViewController
         newVC.gekozenReservering = reservering
+        newVC.nieuweReservering = true
         self.show(newVC, sender: self)
     }
 }
