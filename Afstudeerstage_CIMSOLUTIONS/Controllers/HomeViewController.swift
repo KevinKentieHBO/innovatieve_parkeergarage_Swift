@@ -9,13 +9,20 @@ import UIKit
 
 //Controller voor het aansturen van de homepagina
 class HomeViewController: UIViewController, UITabBarDelegate, UITabBarControllerDelegate {
+   
     
+//Interface Items
     //Connectie met de TableView uit de storyboard
     @IBOutlet weak var HomeReserveringenTabel: UITableView!
+ 
     
+//Variabelen
     //lege lijst met reserveringen
     private var data: [InfoReservering] = []
 
+    
+    
+//Functies
     override func viewDidLoad() {
         
         //zet de styling binnen een cel
@@ -39,6 +46,7 @@ class HomeViewController: UIViewController, UITabBarDelegate, UITabBarController
         
         //Stemt de tab bar af
         tabBarController?.delegate = self
+        HomeReserveringenTabel.reloadData()
     }
     
     //Zorgt ervoor dat bij het tab parkeren altijd naar de root wordt genavigeert.
@@ -48,8 +56,18 @@ class HomeViewController: UIViewController, UITabBarDelegate, UITabBarController
             let secondVC = tabBarController.viewControllers?[1] as! UINavigationController
             secondVC.popToRootViewController(animated: false)
         }
+    
+    //Herlaad de pagina wanneer de er genavigeerd wordt naar de pagina
+    override func viewWillAppear(_ animated: Bool) {
+        DispatchQueue.main.async {
+            self.viewDidLoad()
+        }
+    }
+    
 }
 
+
+//Extenties
 //Zet de tabel in de storyboard
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

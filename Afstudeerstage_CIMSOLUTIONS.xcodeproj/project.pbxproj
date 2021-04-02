@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7509F038261706C300932B3C /* WijzigReserverenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509F037261706C300932B3C /* WijzigReserverenViewController.swift */; };
 		755CCBE8260B663900F43A5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBE7260B663900F43A5A /* AppDelegate.swift */; };
 		755CCBEA260B663900F43A5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBE9260B663900F43A5A /* SceneDelegate.swift */; };
 		755CCBEC260B663900F43A5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBEB260B663900F43A5A /* HomeViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7509F037261706C300932B3C /* WijzigReserverenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WijzigReserverenViewController.swift; sourceTree = "<group>"; };
 		755CCBE4260B663900F43A5A /* Afstudeerstage_CIMSOLUTIONS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Afstudeerstage_CIMSOLUTIONS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		755CCBE7260B663900F43A5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		755CCBE9260B663900F43A5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				75C0EDFA260DE63E00483DA2 /* ReserverenViewController.swift */,
 				75C0EE042611C1B300483DA2 /* MijnReserveringenViewController.swift */,
 				75C0EE092611C37500483DA2 /* InfoReserveringViewController.swift */,
+				7509F037261706C300932B3C /* WijzigReserverenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				755CCC34260BE49A00F43A5A /* ParkerenViewController.swift in Sources */,
 				75C0EE00260E282F00483DA2 /* Reservering.swift in Sources */,
 				75C0EDFB260DE63E00483DA2 /* ReserverenViewController.swift in Sources */,
+				7509F038261706C300932B3C /* WijzigReserverenViewController.swift in Sources */,
 				755CCBEA260B663900F43A5A /* SceneDelegate.swift in Sources */,
 				75C0EE112611E03100483DA2 /* MijnReserveringenTableViewCell.swift in Sources */,
 				75C0EE052611C1B300483DA2 /* MijnReserveringenViewController.swift in Sources */,
@@ -450,6 +454,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = N9UYU57GQ2;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -467,6 +472,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_NO_PIE = NO;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -511,6 +517,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = N9UYU57GQ2;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -522,6 +529,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_NO_PIE = NO;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

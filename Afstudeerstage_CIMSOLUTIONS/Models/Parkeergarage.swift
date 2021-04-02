@@ -20,7 +20,9 @@ struct Parkeergarage : Decodable {
 
 //geef alle parkeergarages terug met een Rest Api
 func getAllParkeergarages(_ completion: @escaping ([Parkeergarage]) -> ()) {
-            if let url = URL(string: "http://localhost:8080/parkeergarages") {
+    let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
+    let localhostUrl : String = "http://localhost:8080"
+            if let url = URL(string: "\(localhostUrl)/parkeergarages") {
                URLSession.shared.dataTask(with: url) { data, response, error in
                   if let data = data {
 

@@ -1,53 +1,33 @@
 //
-//  ReserverenViewController.swift
+//  WijzigReserverenViewController.swift
 //  Afstudeerstage_CIMSOLUTIONS
 //
-//  Created by Kevin Kentie on 26/03/2021.
+//  Created by Kevin Kentie on 02/04/2021.
 //
 
 import UIKit
-import Foundation
 
-//Deze klassen dient als controller voor de pagina waar de gebruiker zijn reservering
-class ReserverenViewController: UIViewController {
+class WijzigReserverenViewController: UIViewController {
     
     
 //Interface Items
-    @IBOutlet weak var parkeerGarageLabel: UILabel!
-    @IBOutlet weak var LocatieLabel: UILabel!
-    @IBOutlet weak var ParkeerplekkenLabel: UILabel!
-    @IBOutlet weak var OpeningstijdLabel: UILabel!
-    @IBOutlet weak var ReserveerButton: UIButton!
-    @IBOutlet weak var DatumTxT: UITextField!
-    @IBOutlet weak var EindTijdTxT: UITextField!
-    
-    
-//Variabelen
-    //leeg parkeergarage object
-    var parkeergarageGekozen = Parkeergarage(parkeergarage_Id: 0,parkeergarage_Naam: "",parkeergarage_Locatie: "",parkeergarage_Parkeerlagen: 0,parkeergarage_Aantal_Plaatsen: 0,parkeergarage_Opening: "",parkeergarage_Sluiting: "")
-    
-    //initializeer dataPicker voor begintijd en eindtijd
+    @IBOutlet weak var beginField: UITextField!
+    @IBOutlet weak var eindField: UITextField!
     let datePicker = UIDatePicker()
     let datePickerEind = UIDatePicker()
     
+
+//Variabelen
+    //lege reservering om de te wijzigen reservering in op te vangen
+    var teWijzigenReservering = InfoReservering(reservering_Id: 0, reservering_Parkeerplaats_Id: 0, reservering_Begintijd: "", reservering_Eindtijd: "", reservering_Datum: "", reservering_Parkeerplaats_laag: 0, reservering_Parkeerplaats_plek: 0, reservering_Parkeergarage: "", reservering_ParkeergarageLocatie: "",reservering_Parkeergarage_Opening: "",reservering_Parkeergarage_Sluiting: "", reservering_parkeergarage_Id: 0)
+
     
-//Functies
-    //Wanneer pagina geladen wordt
+//Funties
     override func viewDidLoad() {
         super.viewDidLoad()
-        //zet de tekstvelden klaar
-        parkeerGarageLabel.text = parkeergarageGekozen.parkeergarage_Naam
-        LocatieLabel.text = parkeergarageGekozen.parkeergarage_Locatie
-        ParkeerplekkenLabel.text = String(parkeergarageGekozen.parkeergarage_Aantal_Plaatsen)
-        OpeningstijdLabel.text = parkeergarageGekozen.parkeergarage_Opening + " - " + parkeergarageGekozen.parkeergarage_Sluiting
-        ReserveerButton.layer.cornerRadius = 4
-        EindTijdTxT.text = nil
-        DatumTxT.text = nil
-        
         //Zet het invoerveld voor de eindtijd uit
-        EindTijdTxT.isEnabled = false
-        
-        //initializeert de datePickers
+        eindField.isEnabled = false
+        // Do any additional setup after loading the view.
         createDataPicker()
         createDataPickerEind()
     }
@@ -62,11 +42,11 @@ class ReserverenViewController: UIViewController {
         toolbar.setItems([doneBtn], animated: true)
         
         //Styling datepicker begintijd
-        DatumTxT.inputAccessoryView = toolbar
+        beginField.inputAccessoryView = toolbar
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.locale = NSLocale(localeIdentifier: "nl") as Locale
         datePicker.minimumDate = Date()
-        DatumTxT.inputView = datePicker
+        beginField.inputView = datePicker
         datePicker.datePickerMode = .dateAndTime
     }
     
@@ -83,15 +63,15 @@ class ReserverenViewController: UIViewController {
         datePickerChanged()
         
         //Datum neerzetten in het tijdsvak
-        DatumTxT.text = formatter.string(from: datePicker.date)
+        beginField.text = formatter.string(from: datePicker.date)
         
         //toolbar deactiveren
         self.view.endEditing(true)
         
         //Aanzetten invoerveld eindtijd
-        EindTijdTxT.text = nil
-        EindTijdTxT.isEnabled = true
-        EindTijdTxT.backgroundColor = .white
+        eindField.text = nil
+        eindField.isEnabled = true
+        eindField.backgroundColor = .white
         createDataPickerEind()
     }
     
@@ -106,12 +86,12 @@ class ReserverenViewController: UIViewController {
         toolbar.setItems([doneBtn], animated: true)
         
         //Styling datepicker begintijd
-        EindTijdTxT.inputAccessoryView = toolbar
+        eindField.inputAccessoryView = toolbar
         datePickerEind.preferredDatePickerStyle = .wheels
         datePickerEind.locale = NSLocale(localeIdentifier: "nl") as Locale
         datePickerEind.minimumDate = datePicker.date
         //datePickerEind.minuteInterval = 5
-        EindTijdTxT.inputView = datePickerEind
+        eindField.inputView = datePickerEind
         datePickerEind.datePickerMode = .time
     }
     
@@ -125,43 +105,36 @@ class ReserverenViewController: UIViewController {
         formatter.locale = NSLocale(localeIdentifier: "nl") as Locale
         
         //Datum neerzetten in het tijdsvak
-        EindTijdTxT.text = formatter.string(from: datePickerEind.date)
+        eindField.text = formatter.string(from: datePickerEind.date)
         
         //toolbar deactiveren
         self.view.endEditing(true)
     }
     
-    //Voert een create methode uit op de reservering wanneer de invoervelden niet leeg zijn
-    @IBAction func maakReservering(_ sender: Any) {
-        //als een of beide velden leeg zijn
-        if DatumTxT.text == "" || EindTijdTxT.text == ""{
-            //Opzetten van een error alert
-            creareAlert(title: "Error", message: "Vul de invoervelden in voor het bevestigen van de reservering")
-        }else{
-            //Formatter voor het wegzetten van de data
-            let tijdFormatter = DateFormatter()
-            let datumFormatter = DateFormatter()
-            tijdFormatter.dateFormat = "HH:mm"
-            datumFormatter.dateFormat = "dd-MM-yyyy"
-            let gereserveerdeTijd = tijdFormatter.string(from: datePicker.date)
-            let gereserveerdeTijdEind = tijdFormatter.string(from: datePickerEind.date)
-            let gereserveerdeDatum = datumFormatter.string(from: datePicker.date)
-
-            //functie die de reservering naar de database voert.
-            let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id: 1, reservering_Parkeergarage_Id: parkeergarageGekozen.parkeergarage_Id)
-                createReservering(res: res)
-            
-            //Wacht tot reservering is doorgevoerd
-            sleep(1);
-            
-            //Navigeer naar de zojuist gemaakte reservering
-            getZojuistGemaakteReservering(datum: gereserveerdeDatum, begintijd: gereserveerdeTijd, eindtijd: gereserveerdeTijdEind, parkeergarageid: parkeergarageGekozen.parkeergarage_Id){(array) in
-                DispatchQueue.main.async {
-                    self.verwijsNaarInfo(res: array)
+    //Actie die uitgevoerd wordt wanneer de wijzig knop aangeraakt wordt
+    @IBAction func wijzigReservering(_ sender: Any) {
+        let tijdFormatter = DateFormatter()
+        let datumFormatter = DateFormatter()
+        tijdFormatter.dateFormat = "HH:mm"
+        datumFormatter.dateFormat = "dd-MM-yyyy"
+        let gereserveerdeTijd = tijdFormatter.string(from: datePicker.date)
+        let gereserveerdeTijdEind = tijdFormatter.string(from: datePickerEind.date)
+        let gereserveerdeDatum = datumFormatter.string(from: datePicker.date)
+        
+        teWijzigenReservering.reservering_Datum = gereserveerdeDatum
+        teWijzigenReservering.reservering_Begintijd = gereserveerdeTijd
+        teWijzigenReservering.reservering_Eindtijd = gereserveerdeTijdEind
+        updateReserveringRest(res: self.teWijzigenReservering){(array) in
+            DispatchQueue.main.async {
+                if array.resultaat == "true"{
+                    self.creareAlert(title: "Reservering gewijzigd", message: "De reservering is gewijzigd.")
+                }else if array.resultaat == "false"{
+                    self.creareAlert(title: "Reservering niet gewijzigd", message: "De reservering is niet gewijzigd.")
                 }
             }
         }
     }
+    
     
     //Aanmaken van een alert om de error te tonen aan de gebruiker
     func creareAlert(title: String, message: String)
@@ -175,7 +148,6 @@ class ReserverenViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    //controleren of de tijdsblokken niet buiten de inrijtijden vallen
     func datePickerChanged() {
         //formatter initializeren
         let formatter = DateFormatter()
@@ -183,8 +155,8 @@ class ReserverenViewController: UIViewController {
         formatter.locale = NSLocale(localeIdentifier: "nl") as Locale
         
         //in en uitrij tijd constateren van de parkeergarage
-        let begintijd = formatter.date(from: parkeergarageGekozen.parkeergarage_Opening)
-        let eindtijd = formatter.date(from: parkeergarageGekozen.parkeergarage_Sluiting)
+        let begintijd = formatter.date(from: teWijzigenReservering.reservering_Parkeergarage_Opening)
+        let eindtijd = formatter.date(from: teWijzigenReservering.reservering_Parkeergarage_Sluiting)
         
         //omzetten gekozen tijd naar Calendar
         var components = Calendar.current.dateComponents([.hour, .minute, .month, .year, .day], from: datePicker.date)
@@ -205,14 +177,5 @@ class ReserverenViewController: UIViewController {
             //zet tijd naar uitrij tijd
             datePicker.setDate(Calendar.current.date(from: components)!, animated: true)
         }
-    }
-    
-    func verwijsNaarInfo(res : InfoReservering){
-        let reservering = res
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let newVC = storyboard.instantiateViewController(withIdentifier: "infoReserverenVCIdentifier") as! InfoReserveringViewController
-        newVC.gekozenReservering = reservering
-        newVC.nieuweReservering = true
-        self.show(newVC, sender: self)
     }
 }

@@ -9,15 +9,21 @@ import UIKit
 
 class MijnReserveringenViewController: UIViewController {
 
+    
+//Interface Items
     //Initializeren van de verschillende interface attributen
     @IBOutlet weak var ParkeergarageDatumCell: UILabel!
     @IBOutlet weak var ParkeergarageNaamCell: UILabel!
     @IBOutlet weak var MijnReserveringenTable: UITableView!
+  
     
+//Variabelen
     //lege lijst met Reserveringen van de gebruiker
     private var data: [InfoReservering] = []
     var refreshControl = UIRefreshControl()
     
+    
+//Functies
     //wanneer de pagina geladen wordt
     override func viewDidLoad() {
         
@@ -54,6 +60,8 @@ class MijnReserveringenViewController: UIViewController {
     }
 }
 
+
+//Extenties
 //Zet de tabel in de storyboard
 extension MijnReserveringenViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

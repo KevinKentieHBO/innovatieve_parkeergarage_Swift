@@ -9,17 +9,23 @@ import UIKit
 
 //Controller voor het regelen van de lijst met parkeergarages
 class ParkerenViewController: UIViewController {
+   
     
+//Interface Items
     //maken van een lege cel tabel
     private let tableView: UITableView = {
         let table = UITableView()
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
     }()
+
     
+//Variabelen
     //lege lijst van parkeergarages
     private var data: [Parkeergarage] = []
 
+    
+//Functies
     //wanneer pagina geladen wordt
     override func viewDidLoad() {
         //Ophalen van alle parkeergarages en deze in de lege parkeergarage lijst toevoegen
@@ -43,6 +49,8 @@ class ParkerenViewController: UIViewController {
     }
 }
 
+
+//Extenties
 //Extentie van de parkeerviewController die de tabel in het canvas plaatst
 extension ParkerenViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -68,17 +76,4 @@ extension ParkerenViewController: UITableViewDataSource{
         cell.textLabel?.text = data[indexPath.row].parkeergarage_Naam
         return cell
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
