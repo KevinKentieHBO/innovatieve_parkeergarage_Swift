@@ -21,7 +21,7 @@ func getTestAllTarieven(_ completion: @escaping ([Betaaltarief]) -> ()) {
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-            if let url = URL(string: "\(localhostUrl)/betaaltarief") {
+            if let url = URL(string: "\(herokuUrl)/betaaltarief") {
                URLSession.shared.dataTask(with: url) { data, response, error in
                   if let data = data {
 
