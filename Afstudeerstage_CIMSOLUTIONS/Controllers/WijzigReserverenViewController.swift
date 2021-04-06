@@ -15,6 +15,7 @@ class WijzigReserverenViewController: UIViewController {
     @IBOutlet weak var eindField: UITextField!
     let datePicker = UIDatePicker()
     let datePickerEind = UIDatePicker()
+    @IBOutlet weak var naamParkeergarage: UILabel!
     
 
 //Variabelen
@@ -25,6 +26,7 @@ class WijzigReserverenViewController: UIViewController {
 //Funties
     override func viewDidLoad() {
         super.viewDidLoad()
+        naamParkeergarage.text = teWijzigenReservering.reservering_Parkeergarage
         //Zet het invoerveld voor de eindtijd uit
         eindField.isEnabled = false
         // Do any additional setup after loading the view.
@@ -113,6 +115,10 @@ class WijzigReserverenViewController: UIViewController {
     
     //Actie die uitgevoerd wordt wanneer de wijzig knop aangeraakt wordt
     @IBAction func wijzigReservering(_ sender: Any) {
+        if beginField.text == "" || eindField.text == ""{
+            //Opzetten van een error alert
+            createAlert(title: "Error", message: "Vul de invoervelden in voor het wijzigen van de reservering")
+        }else{
         let tijdFormatter = DateFormatter()
         let datumFormatter = DateFormatter()
         tijdFormatter.dateFormat = "HH:mm"
@@ -127,17 +133,38 @@ class WijzigReserverenViewController: UIViewController {
         updateReserveringRest(res: self.teWijzigenReservering){(array) in
             DispatchQueue.main.async {
                 if array.resultaat == "true"{
-                    self.creareAlert(title: "Reservering gewijzigd", message: "De reservering is gewijzigd.")
+                    self.createSuccesAlert(title: "Reservering gewijzigd", message: "De reservering is gewijzigd.")
                 }else if array.resultaat == "false"{
-                    self.creareAlert(title: "Reservering niet gewijzigd", message: "De reservering is niet gewijzigd.")
+                    self.createAlert(title: "Reservering niet gewijzigd", message: "De reservering is niet gewijzigd.")
                 }
             }
         }
+        }
+    }
+    
+    func createSuccesAlert(title: String, message: String)
+    {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Oke", style: .default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+            //Wacht tot reservering is doorgevoerd
+            sleep(1);
+            
+            //Navigeer naar de zojuist gemaakte reservering
+            getZojuistGemaakteReservering(datum: self.teWijzigenReservering.reservering_Datum, begintijd: self.teWijzigenReservering.reservering_Begintijd, eindtijd: self.teWijzigenReservering.reservering_Eindtijd, parkeergarageid: self.teWijzigenReservering.reservering_parkeergarage_Id){(array) in
+                DispatchQueue.main.async {
+                    self.verwijsNaarInfo(res: array)
+                }
+            }
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     
     //Aanmaken van een alert om de error te tonen aan de gebruiker
-    func creareAlert(title: String, message: String)
+    func createAlert(title: String, message: String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -177,5 +204,15 @@ class WijzigReserverenViewController: UIViewController {
             //zet tijd naar uitrij tijd
             datePicker.setDate(Calendar.current.date(from: components)!, animated: true)
         }
+    }
+    
+    //Functie die de verwijzing naar info mogelijk maakt.
+    func verwijsNaarInfo(res : InfoReservering){
+        let reservering = res
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "infoReserverenVCIdentifier") as! InfoReserveringViewController
+        newVC.gekozenReservering = reservering
+        newVC.nieuweReservering = true
+        self.show(newVC, sender: self)
     }
 }

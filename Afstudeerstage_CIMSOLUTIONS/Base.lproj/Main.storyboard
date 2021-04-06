@@ -263,6 +263,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGg-S6-T5c">
+                                <rect key="frame" x="247" y="115" width="111" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <state key="normal" title="Abonnementen"/>
+                                <connections>
+                                    <action selector="verwijsNaarAbonnementen:" destination="tJH-mP-U8E" eventType="touchUpInside" id="I18-hG-Oun"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="25v-0e-xT7"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -468,6 +478,78 @@
             </objects>
             <point key="canvasLocation" x="1376.8115942028987" y="2446.875"/>
         </scene>
+        <!--Abonnement Parkeergarage View Controller-->
+        <scene sceneID="32e-N4-1Hu">
+            <objects>
+                <viewController storyboardIdentifier="abonnementParkeergarageId" id="loR-4n-pl5" customClass="AbonnementParkeergarageViewController" customModule="Afstudeerstage_CIMSOLUTIONS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dMV-0I-2Wb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-sc-Q4e">
+                                <rect key="frame" x="20" y="205" width="374" height="512"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGray5Color"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abonnementen:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiM-U4-HXW">
+                                <rect key="frame" x="83" y="85" width="254" height="32.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Theater" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4X-TM-HOV">
+                                <rect key="frame" x="106" y="125" width="208" height="72"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="IMW-pA-k3Q"/>
+                                    <constraint firstAttribute="width" constant="208" id="YZE-4w-FYu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqi-JY-yax">
+                                <rect key="frame" x="136" y="770" width="143" height="30"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="143" id="aig-wK-DwN"/>
+                                    <constraint firstAttribute="height" constant="30" id="bHm-4H-N7j"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                <state key="normal" title="Aanschaffen"/>
+                                <connections>
+                                    <action selector="wijzigReservering:" destination="p9G-Qe-jLP" eventType="touchUpInside" id="LDf-sj-8zo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9xY-GQ-SWc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NyT-sc-Q4e" firstAttribute="leading" secondItem="9xY-GQ-SWc" secondAttribute="leading" constant="20" id="0Un-hz-6ru"/>
+                            <constraint firstItem="BiM-U4-HXW" firstAttribute="leading" secondItem="9xY-GQ-SWc" secondAttribute="leading" constant="83" id="1z4-OC-ja8"/>
+                            <constraint firstItem="9xY-GQ-SWc" firstAttribute="trailing" secondItem="NyT-sc-Q4e" secondAttribute="trailing" constant="20" id="FcB-v4-t1H"/>
+                            <constraint firstItem="9xY-GQ-SWc" firstAttribute="bottom" secondItem="dqi-JY-yax" secondAttribute="bottom" constant="40" id="Lsq-zk-pat"/>
+                            <constraint firstItem="9xY-GQ-SWc" firstAttribute="trailing" secondItem="V4X-TM-HOV" secondAttribute="trailing" constant="100" id="RW8-au-JaT"/>
+                            <constraint firstItem="NyT-sc-Q4e" firstAttribute="top" secondItem="V4X-TM-HOV" secondAttribute="bottom" constant="8" id="agF-Nf-6Jm"/>
+                            <constraint firstItem="9xY-GQ-SWc" firstAttribute="trailing" secondItem="BiM-U4-HXW" secondAttribute="trailing" constant="77" id="fnf-XI-btU"/>
+                            <constraint firstItem="BiM-U4-HXW" firstAttribute="top" secondItem="9xY-GQ-SWc" secondAttribute="top" constant="41" id="jbC-sw-dz6"/>
+                            <constraint firstItem="V4X-TM-HOV" firstAttribute="leading" secondItem="9xY-GQ-SWc" secondAttribute="leading" constant="106" id="mya-yv-hqB"/>
+                            <constraint firstItem="V4X-TM-HOV" firstAttribute="top" secondItem="BiM-U4-HXW" secondAttribute="bottom" constant="7.5" id="nbx-lb-Mol"/>
+                            <constraint firstItem="dqi-JY-yax" firstAttribute="top" secondItem="NyT-sc-Q4e" secondAttribute="bottom" constant="42" id="uGW-oD-Sql"/>
+                            <constraint firstItem="9xY-GQ-SWc" firstAttribute="trailing" secondItem="dqi-JY-yax" secondAttribute="trailing" constant="132" id="w6a-jC-8w4"/>
+                            <constraint firstItem="dqi-JY-yax" firstAttribute="leading" secondItem="9xY-GQ-SWc" secondAttribute="leading" constant="139" id="z4P-Dx-Zk9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Idh-ef-bB4"/>
+                    <connections>
+                        <outlet property="aanschafKnop" destination="dqi-JY-yax" id="XML-uE-KIO"/>
+                        <outlet property="abonnementTabel" destination="NyT-sc-Q4e" id="6Rw-O2-wvF"/>
+                        <outlet property="garagenaamLabel" destination="V4X-TM-HOV" id="VJ8-SR-eIm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IN0-5U-8QR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="660.86956521739137" y="2446.875"/>
+        </scene>
         <!--Wijzig Reserveren View Controller-->
         <scene sceneID="cah-M5-UJ0">
             <objects>
@@ -519,8 +601,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Theather" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwB-8A-1WW">
-                                <rect key="frame" x="20" y="132" width="115" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwB-8A-1WW">
+                                <rect key="frame" x="20" y="120" width="374" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
                                 <color key="textColor" systemColor="systemGreenColor"/>
@@ -533,6 +615,7 @@
                     <connections>
                         <outlet property="beginField" destination="hRD-Mm-xxs" id="Zl0-7o-PTE"/>
                         <outlet property="eindField" destination="LP3-Nw-BRn" id="6KT-aE-MP8"/>
+                        <outlet property="naamParkeergarage" destination="HwB-8A-1WW" id="Jmb-VM-m5K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qfX-3s-BPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -612,6 +695,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -35,7 +35,7 @@ class InfoReserveringViewController: UIViewController {
     //Wanneer pagina geladen wordt
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkReserveringVoorbij()
         WijzigenButton.layer.cornerRadius = 4
         VerwijderenButton.layer.cornerRadius = 4
         
@@ -56,7 +56,11 @@ class InfoReserveringViewController: UIViewController {
     }
     
     @IBAction func goToHome(_ sender: Any) {
-        tabBarController?.selectedIndex = 0
+        if(self.tabBarController?.selectedIndex != 0){
+            self.tabBarController?.selectedIndex = 0
+        }else{
+            self.navigationController?.popToRootViewController(animated: false)
+        }
     }
     
     //Navigeren naar het wijzigen van een reservering
@@ -116,5 +120,29 @@ class InfoReserveringViewController: UIViewController {
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func checkReserveringVoorbij(){
+        //formatter initializeren
+        let formatterTijd = DateFormatter()
+        let formatterDatum = DateFormatter()
+        formatterTijd.dateFormat = "HH:mm"
+        formatterDatum.dateFormat = "dd-MM-yyyy"
+        formatterTijd.locale = NSLocale(localeIdentifier: "nl") as Locale
+        formatterDatum.locale = NSLocale(localeIdentifier: "nl") as Locale
+        
+        //in en uitrij tijd constateren van de parkeergarage
+        let begintijd = formatterTijd.date(from: gekozenReservering.reservering_Begintijd)
+        let datum = formatterDatum.date(from: gekozenReservering.reservering_Datum)
+        
+        //omzetten gekozen tijd naar Calendar
+        let componentsHuidigeDateTimeCalendar = Calendar.current.dateComponents([.hour, .minute, .month, .year, .day, .month], from: Date())
+        let begintijdCalendar = Calendar.current.dateComponents([.hour, .minute], from: begintijd!)
+        let datumCalendar = Calendar.current.dateComponents([.year, .day, .month], from: datum!)
+        
+        if(datumCalendar.year! <= componentsHuidigeDateTimeCalendar.year! && datumCalendar.month! <= componentsHuidigeDateTimeCalendar.month! && datumCalendar.day! <= componentsHuidigeDateTimeCalendar.day! && begintijdCalendar.hour! <= componentsHuidigeDateTimeCalendar.hour! && begintijdCalendar.minute! <= componentsHuidigeDateTimeCalendar.minute!){
+            WijzigenButton.isHidden = true
+            VerwijderenButton.frame.origin = CGPoint(x: (UIScreen.main.bounds.width - VerwijderenButton.bounds.width) / 2, y: (UIScreen.main.bounds.height / 2)+42)
+        }
     }
 }

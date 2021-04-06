@@ -215,4 +215,12 @@ class ReserverenViewController: UIViewController {
         newVC.nieuweReservering = true
         self.show(newVC, sender: self)
     }
+    
+    @IBAction func verwijsNaarAbonnementen(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "abonnementParkeergarageId") as! AbonnementParkeergarageViewController
+        newVC.parkeergarageGekozen = self.parkeergarageGekozen
+        self.show(newVC, sender: self)
+    }
+    
 }
