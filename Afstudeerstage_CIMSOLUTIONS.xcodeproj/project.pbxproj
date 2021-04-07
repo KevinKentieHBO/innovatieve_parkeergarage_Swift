@@ -24,6 +24,9 @@
 		755CCC34260BE49A00F43A5A /* ParkerenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC33260BE49A00F43A5A /* ParkerenViewController.swift */; };
 		755CCC39260BE4B200F43A5A /* GegevensViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC38260BE4B200F43A5A /* GegevensViewController.swift */; };
 		755CCC3E260BE4BD00F43A5A /* SaldoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCC3D260BE4BD00F43A5A /* SaldoViewController.swift */; };
+		75BE8451261DA4C4008CB627 /* MijnAbonnementenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE8450261DA4C4008CB627 /* MijnAbonnementenViewController.swift */; };
+		75BE8457261DA6AE008CB627 /* MijnAbonnementenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE8455261DA6AE008CB627 /* MijnAbonnementenTableViewCell.swift */; };
+		75BE8458261DA6AE008CB627 /* MijnAbonnementenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BE8456261DA6AE008CB627 /* MijnAbonnementenTableViewCell.xib */; };
 		75C0EDF6260CC3A200483DA2 /* Parkeergarage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0EDF5260CC3A200483DA2 /* Parkeergarage.swift */; };
 		75C0EDFB260DE63E00483DA2 /* ReserverenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0EDFA260DE63E00483DA2 /* ReserverenViewController.swift */; };
 		75C0EE00260E282F00483DA2 /* Reservering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0EDFF260E282F00483DA2 /* Reservering.swift */; };
@@ -74,6 +77,9 @@
 		755CCC33260BE49A00F43A5A /* ParkerenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkerenViewController.swift; sourceTree = "<group>"; };
 		755CCC38260BE4B200F43A5A /* GegevensViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GegevensViewController.swift; sourceTree = "<group>"; };
 		755CCC3D260BE4BD00F43A5A /* SaldoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaldoViewController.swift; sourceTree = "<group>"; };
+		75BE8450261DA4C4008CB627 /* MijnAbonnementenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MijnAbonnementenViewController.swift; sourceTree = "<group>"; };
+		75BE8455261DA6AE008CB627 /* MijnAbonnementenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MijnAbonnementenTableViewCell.swift; sourceTree = "<group>"; };
+		75BE8456261DA6AE008CB627 /* MijnAbonnementenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MijnAbonnementenTableViewCell.xib; sourceTree = "<group>"; };
 		75C0EDF5260CC3A200483DA2 /* Parkeergarage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parkeergarage.swift; sourceTree = "<group>"; };
 		75C0EDFA260DE63E00483DA2 /* ReserverenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReserverenViewController.swift; sourceTree = "<group>"; };
 		75C0EDFF260E282F00483DA2 /* Reservering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservering.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 				75C0EE042611C1B300483DA2 /* MijnReserveringenViewController.swift */,
 				75C0EE092611C37500483DA2 /* InfoReserveringViewController.swift */,
 				7509F037261706C300932B3C /* WijzigReserverenViewController.swift */,
+				75BE8450261DA4C4008CB627 /* MijnAbonnementenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -228,6 +235,8 @@
 				75C0EE102611E03100483DA2 /* MijnReserveringenTableViewCell.xib */,
 				7509F047261C7F8D00932B3C /* AbonnementTableViewCell.swift */,
 				7509F048261C7F8D00932B3C /* AbonnementTableViewCell.xib */,
+				75BE8455261DA6AE008CB627 /* MijnAbonnementenTableViewCell.swift */,
+				75BE8456261DA6AE008CB627 /* MijnAbonnementenTableViewCell.xib */,
 			);
 			path = Subclass;
 			sourceTree = "<group>";
@@ -338,6 +347,7 @@
 				755CCBF4260B663B00F43A5A /* LaunchScreen.storyboard in Resources */,
 				755CCBF1260B663B00F43A5A /* Assets.xcassets in Resources */,
 				7509F04A261C7F8D00932B3C /* AbonnementTableViewCell.xib in Resources */,
+				75BE8458261DA6AE008CB627 /* MijnAbonnementenTableViewCell.xib in Resources */,
 				755CCBEF260B663900F43A5A /* Main.storyboard in Resources */,
 				75C0EE122611E03100483DA2 /* MijnReserveringenTableViewCell.xib in Resources */,
 			);
@@ -366,6 +376,7 @@
 			files = (
 				755CCC39260BE4B200F43A5A /* GegevensViewController.swift in Sources */,
 				75C0EE0A2611C37500483DA2 /* InfoReserveringViewController.swift in Sources */,
+				75BE8451261DA4C4008CB627 /* MijnAbonnementenViewController.swift in Sources */,
 				7509F049261C7F8D00932B3C /* AbonnementTableViewCell.swift in Sources */,
 				755CCC3E260BE4BD00F43A5A /* SaldoViewController.swift in Sources */,
 				755CCBEC260B663900F43A5A /* HomeViewController.swift in Sources */,
@@ -378,6 +389,7 @@
 				7509F038261706C300932B3C /* WijzigReserverenViewController.swift in Sources */,
 				755CCBEA260B663900F43A5A /* SceneDelegate.swift in Sources */,
 				75C0EE112611E03100483DA2 /* MijnReserveringenTableViewCell.swift in Sources */,
+				75BE8457261DA6AE008CB627 /* MijnAbonnementenTableViewCell.swift in Sources */,
 				75C0EE052611C1B300483DA2 /* MijnReserveringenViewController.swift in Sources */,
 				7509F050261C81CB00932B3C /* Abonnement.swift in Sources */,
 				75C0EDF6260CC3A200483DA2 /* Parkeergarage.swift in Sources */,

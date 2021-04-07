@@ -264,7 +264,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGg-S6-T5c">
-                                <rect key="frame" x="247" y="115" width="111" height="38"/>
+                                <rect key="frame" x="240" y="119" width="111" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
@@ -329,7 +329,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MQH-U9-Eup" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378.2608695652175" y="1797.9910714285713"/>
+            <point key="canvasLocation" x="1361" y="1852"/>
+        </scene>
+        <!--Mijn Abonnementen View Controller-->
+        <scene sceneID="ahQ-Vz-Pns">
+            <objects>
+                <viewController id="QZq-yn-l59" customClass="MijnAbonnementenViewController" customModule="Afstudeerstage_CIMSOLUTIONS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ilT-Ji-04Z">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mijn Abonnementen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJJ-2j-ndg">
+                                <rect key="frame" x="44" y="126" width="327" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <color key="textColor" systemColor="systemGreenColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1id-aR-rKD">
+                                <rect key="frame" x="0.0" y="196" width="414" height="617"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aCA-WX-tuc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hJJ-2j-ndg" firstAttribute="top" secondItem="aCA-WX-tuc" secondAttribute="top" constant="38" id="5uJ-u2-9L7"/>
+                            <constraint firstItem="aCA-WX-tuc" firstAttribute="trailing" secondItem="hJJ-2j-ndg" secondAttribute="trailing" constant="43" id="SdW-ty-mS8"/>
+                            <constraint firstItem="hJJ-2j-ndg" firstAttribute="leading" secondItem="aCA-WX-tuc" secondAttribute="leading" constant="44" id="zDK-LH-9ua"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DBm-Xh-X0c"/>
+                    <connections>
+                        <outlet property="mijnAbonnementenTabel" destination="1id-aR-rKD" id="khB-4f-8WH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fb7-GV-lec" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2089.8550724637685" y="1851.5625"/>
         </scene>
         <!--Info Reservering View Controller-->
         <scene sceneID="b3L-Hc-7li">
@@ -476,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zke-7p-QHJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1376.8115942028987" y="2446.875"/>
+            <point key="canvasLocation" x="1359" y="2500"/>
         </scene>
         <!--Abonnement Parkeergarage View Controller-->
         <scene sceneID="32e-N4-1Hu">
@@ -641,6 +678,19 @@
                                 </state>
                                 <connections>
                                     <segue destination="HRi-Dx-X5S" kind="show" id="845-3b-aQz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAL-8R-zZq">
+                                <rect key="frame" x="0.0" y="413" width="414" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Mijn Abonnementen">
+                                    <color key="titleShadowColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="QZq-yn-l59" kind="show" id="Uz9-LB-PuF"/>
                                 </connections>
                             </button>
                         </subviews>

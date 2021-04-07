@@ -53,7 +53,7 @@ func createReservering(res : makeReservering) {
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let restURL = "\(herokuUrl)/reservering/"+res.reservering_Datum+"/"+res.reservering_Begintijd+"/"+res.reservering_Eindtijd+"/"+String(res.reservering_Auto_Id)+"/"+String(res.reservering_Parkeergarage_Id)
+    let restURL = "\(localhostUrl)/reservering/"+res.reservering_Datum+"/"+res.reservering_Begintijd+"/"+res.reservering_Eindtijd+"/"+String(res.reservering_Auto_Id)+"/"+String(res.reservering_Parkeergarage_Id)
     print(restURL)
     
     if let url = URL(string: restURL) {
@@ -71,7 +71,7 @@ func verwijderReserveringRest(res : InfoReservering, _ completion: @escaping (Re
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let restURL = "\(herokuUrl)/reservering/verwijder/\(res.reservering_Id)"
+    let restURL = "\(localhostUrl)/reservering/verwijder/\(res.reservering_Id)"
     print(restURL)
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
@@ -96,7 +96,7 @@ func updateReserveringRest(res : InfoReservering, _ completion: @escaping (Respo
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let restURL = "\(herokuUrl)/reservering/update/\(res.reservering_Datum)/\(res.reservering_Begintijd)/\(res.reservering_Eindtijd)/\(res.reservering_Id)/\(res.reservering_parkeergarage_Id)"
+    let restURL = "\(localhostUrl)/reservering/update/\(res.reservering_Datum)/\(res.reservering_Begintijd)/\(res.reservering_Eindtijd)/\(res.reservering_Id)/\(res.reservering_parkeergarage_Id)"
     print(restURL)
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
@@ -123,7 +123,7 @@ func getReserveringenVanGebruiker(_ completion: @escaping ([InfoReservering]) ->
     let localhostUrl : String = "http://localhost:8080"
     
     let autoId = 1
-    if let url = URL(string: "\(herokuUrl)/reserveringen/"+String(autoId)) {
+    if let url = URL(string: "\(localhostUrl)/reserveringen/"+String(autoId)) {
        URLSession.shared.dataTask(with: url) { data, response, error in
           if let data = data {
 
@@ -147,7 +147,7 @@ func getZojuistGemaakteReservering(datum : String, begintijd : String, eindtijd 
     let localhostUrl : String = "http://localhost:8080"
     
     let autoId = 1
-    if let url = URL(string:"\(herokuUrl)/reservering/get/\(datum)/\(begintijd)/\(eindtijd)/\(autoId)/\(parkeergarageid)") {
+    if let url = URL(string:"\(localhostUrl)/reservering/get/\(datum)/\(begintijd)/\(eindtijd)/\(autoId)/\(parkeergarageid)") {
        URLSession.shared.dataTask(with: url) { data, response, error in
           if let data = data {
 

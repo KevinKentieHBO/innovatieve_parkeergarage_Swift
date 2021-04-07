@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="158" id="KGk-i7-Jjw" customClass="MijnAbonnementenTableViewCell" customModule="Afstudeerstage_CIMSOLUTIONS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="158"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="158"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parkeergarage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmn-Q9-dU8">
+                        <rect key="frame" x="20" y="16" width="215" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="dm3-as-3K8"/>
+                            <constraint firstAttribute="width" constant="215" id="nEi-rz-XSe"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGreenColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abonnement Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMB-2Q-h8b">
+                        <rect key="frame" x="20" y="36" width="215" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="UNe-ag-yp1"/>
+                            <constraint firstAttribute="width" constant="215" id="mfp-iF-cAb"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Geldig tot:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKL-aN-wbd">
+                        <rect key="frame" x="278" y="16" width="80" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="Lak-oD-wdN"/>
+                            <constraint firstAttribute="width" constant="80" id="nIh-5q-B50"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGreenColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01-01-2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Fx-Ii-9V1">
+                        <rect key="frame" x="255" y="41" width="126" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="126" id="oj5-8E-ZIW"/>
+                            <constraint firstAttribute="height" constant="21" id="y3e-JK-gbx"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Beschrijving" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEb-bf-QI5">
+                        <rect key="frame" x="20" y="66" width="361" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="361" id="DeC-2J-MJ5"/>
+                            <constraint firstAttribute="height" constant="50" id="vzJ-Vo-cOo"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e1f-KH-Ukn">
+                        <rect key="frame" x="124" y="120" width="153" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="3NH-uD-V1n"/>
+                            <constraint firstAttribute="width" constant="153" id="adl-mc-qeO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" systemColor="systemGray2Color"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="e1f-KH-Ukn" firstAttribute="top" secondItem="dEb-bf-QI5" secondAttribute="bottom" constant="8" id="6Za-EK-qgu"/>
+                    <constraint firstItem="sKL-aN-wbd" firstAttribute="leading" secondItem="bmn-Q9-dU8" secondAttribute="trailing" constant="43" id="GcV-8e-miZ"/>
+                    <constraint firstItem="sKL-aN-wbd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="Oax-NT-9s5"/>
+                    <constraint firstItem="9Fx-Ii-9V1" firstAttribute="top" secondItem="sKL-aN-wbd" secondAttribute="bottom" constant="4" id="SCk-ts-b9Y"/>
+                    <constraint firstItem="e1f-KH-Ukn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="104" id="TW2-HY-djE"/>
+                    <constraint firstItem="DMB-2Q-h8b" firstAttribute="top" secondItem="bmn-Q9-dU8" secondAttribute="bottom" constant="4" id="UBH-J4-5Kp"/>
+                    <constraint firstItem="dEb-bf-QI5" firstAttribute="top" secondItem="9Fx-Ii-9V1" secondAttribute="bottom" constant="4" id="anD-tu-D30"/>
+                    <constraint firstItem="bmn-Q9-dU8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="lUf-cx-c7N"/>
+                    <constraint firstItem="bmn-Q9-dU8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="pdN-34-HuI"/>
+                    <constraint firstItem="DMB-2Q-h8b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="qyc-NB-21F"/>
+                    <constraint firstAttribute="bottom" secondItem="bmn-Q9-dU8" secondAttribute="bottom" constant="126" id="v90-tp-Eh9"/>
+                    <constraint firstItem="9Fx-Ii-9V1" firstAttribute="leading" secondItem="DMB-2Q-h8b" secondAttribute="trailing" constant="20" id="zs9-3t-71o"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="abonnementTypeLabel" destination="DMB-2Q-h8b" id="U3p-9W-i4Q"/>
+                <outlet property="beschrijvingLabel" destination="dEb-bf-QI5" id="JUe-UP-3oW"/>
+                <outlet property="eindDatumLabel" destination="9Fx-Ii-9V1" id="Y0u-pI-tcY"/>
+                <outlet property="parkeergarageNaamLabel" destination="bmn-Q9-dU8" id="VSV-I1-7jR"/>
+                <outlet property="statusLabel" destination="e1f-KH-Ukn" id="AFw-2X-cZ5"/>
+            </connections>
+            <point key="canvasLocation" x="34.782608695652179" y="130.58035714285714"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
