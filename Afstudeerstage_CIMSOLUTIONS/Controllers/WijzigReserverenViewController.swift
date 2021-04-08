@@ -16,6 +16,8 @@ class WijzigReserverenViewController: UIViewController {
     let datePicker = UIDatePicker()
     let datePickerEind = UIDatePicker()
     @IBOutlet weak var naamParkeergarage: UILabel!
+    @IBOutlet weak var voormaligeDatum: UILabel!
+    @IBOutlet weak var voormaligeTijd: UILabel!
     
 
 //Variabelen
@@ -28,6 +30,8 @@ class WijzigReserverenViewController: UIViewController {
         super.viewDidLoad()
         naamParkeergarage.text = teWijzigenReservering.reservering_Parkeergarage
         //Zet het invoerveld voor de eindtijd uit
+        voormaligeTijd.text = "\(teWijzigenReservering.reservering_Begintijd) - \(teWijzigenReservering.reservering_Eindtijd)"
+        voormaligeDatum.text = teWijzigenReservering.reservering_Datum
         eindField.isEnabled = false
         // Do any additional setup after loading the view.
         createDataPicker()

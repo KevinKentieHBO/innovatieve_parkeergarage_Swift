@@ -33,7 +33,7 @@ func getAbonnementParkeergarage(parkeergarageId : Int, _ completion: @escaping (
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let restURL = "\(localhostUrl)/abonnement/\(parkeergarageId)"
+    let restURL = "\(herokuUrl)/abonnement/\(parkeergarageId)"
     print(restURL)
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in

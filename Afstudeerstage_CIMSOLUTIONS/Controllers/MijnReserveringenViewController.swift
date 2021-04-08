@@ -86,7 +86,7 @@ extension MijnReserveringenViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "MijnReserveringenTableViewCell",
                                                  for: indexPath) as! MijnReserveringenTableViewCell
         cell.CellDatum.text = data[indexPath.row].reservering_Datum
-        cell.CellTijd.text = data[indexPath.row].reservering_Begintijd
+        cell.CellTijd.text = "\(data[indexPath.row].reservering_Begintijd) - \(data[indexPath.row].reservering_Eindtijd)"
         cell.CellParkeergarage.text = data[indexPath.row].reservering_Parkeergarage
         return cell
     }
