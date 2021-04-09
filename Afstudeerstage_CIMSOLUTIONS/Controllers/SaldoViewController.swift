@@ -14,5 +14,10 @@ class SaldoViewController: UIViewController {
 //Functies
     override func viewDidLoad() {
         super.viewDidLoad()
+        getTestAllTarieven{(array) in
+            for bedrag in array{
+                print(bedrag.type)
+            }
+        }
     }
 }

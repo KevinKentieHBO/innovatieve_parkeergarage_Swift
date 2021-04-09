@@ -18,15 +18,20 @@ struct Betaaltarief : Decodable {
 //haal alle betaaltarieven op met een REST Api
 func getTestAllTarieven(_ completion: @escaping ([Betaaltarief]) -> ()) {
     
+    
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
             if let url = URL(string: "\(localhostUrl)/betaaltarief") {
                URLSession.shared.dataTask(with: url) { data, response, error in
                   if let data = data {
-
+                    
+                    let d = String(data: data,encoding: .utf8)
+                    let decodedData = Data((d?.aesDecrypt()!.utf8)!)
+                    
+                    
                       do {
-                         let res = try JSONDecoder().decode([Betaaltarief].self, from: data)
+                        let res = try JSONDecoder().decode([Betaaltarief].self, from: decodedData)
                         print(res.self)
                         completion(res)
                         return
@@ -37,3 +42,4 @@ func getTestAllTarieven(_ completion: @escaping ([Betaaltarief]) -> ()) {
                }.resume()
         }
 }
+
