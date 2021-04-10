@@ -30,17 +30,21 @@ struct AbonnementGebruiker : Decodable{
 //geef alle abonnementen van een parkeergarage terug met een Rest Api
 func getAbonnementParkeergarage(parkeergarageId : Int, _ completion: @escaping ([Abonnement]) -> ()) {
     
+    
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let restURL = "\(herokuUrl)/abonnement/\(parkeergarageId)"
+    let restURL = "\(localhostUrl)/abonnement/\(parkeergarageId)"
     print(restURL)
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
         if let data = data {
+            
+            let d = String(data: data,encoding: .utf8)
+            let decodedData = Data((d?.aesDecrypt()!.utf8)!)
 
             do {
-               let res = try JSONDecoder().decode([Abonnement].self, from: data)
+               let res = try JSONDecoder().decode([Abonnement].self, from: decodedData)
               print(res)
               completion(res)
               return
@@ -65,9 +69,12 @@ func getAbonnementAutoId(_ completion: @escaping ([AbonnementGebruiker]) -> ()) 
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
         if let data = data {
+            
+            let d = String(data: data,encoding: .utf8)
+            let decodedData = Data((d?.aesDecrypt()!.utf8)!)
 
             do {
-               let res = try JSONDecoder().decode([AbonnementGebruiker].self, from: data)
+               let res = try JSONDecoder().decode([AbonnementGebruiker].self, from: decodedData)
               print(res)
               completion(res)
               return

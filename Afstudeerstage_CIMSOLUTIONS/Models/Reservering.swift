@@ -76,9 +76,12 @@ func verwijderReserveringRest(res : InfoReservering, _ completion: @escaping (Re
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
         if let data = data {
+            
+            let d = String(data: data,encoding: .utf8)
+            let decodedData = Data((d?.aesDecrypt()!.utf8)!)
 
             do {
-               let res = try JSONDecoder().decode(Response.self, from: data)
+               let res = try JSONDecoder().decode(Response.self, from: decodedData)
               print(res)
               completion(res)
               return
@@ -101,9 +104,12 @@ func updateReserveringRest(res : InfoReservering, _ completion: @escaping (Respo
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
         if let data = data {
+            
+            let d = String(data: data,encoding: .utf8)
+            let decodedData = Data((d?.aesDecrypt()!.utf8)!)
 
             do {
-               let res = try JSONDecoder().decode(Response.self, from: data)
+               let res = try JSONDecoder().decode(Response.self, from: decodedData)
               print(res)
               completion(res)
               return
@@ -126,9 +132,12 @@ func getReserveringenVanGebruiker(_ completion: @escaping ([InfoReservering]) ->
     if let url = URL(string: "\(localhostUrl)/reserveringen/"+String(autoId)) {
        URLSession.shared.dataTask(with: url) { data, response, error in
           if let data = data {
+            
+            let d = String(data: data,encoding: .utf8)
+            let decodedData = Data((d?.aesDecrypt()!.utf8)!)
 
               do {
-                 let res = try JSONDecoder().decode([InfoReservering].self, from: data)
+                 let res = try JSONDecoder().decode([InfoReservering].self, from: decodedData)
                 print(res)
                 completion(res)
                 return
@@ -150,9 +159,12 @@ func getZojuistGemaakteReservering(datum : String, begintijd : String, eindtijd 
     if let url = URL(string:"\(localhostUrl)/reservering/get/\(datum)/\(begintijd)/\(eindtijd)/\(autoId)/\(parkeergarageid)") {
        URLSession.shared.dataTask(with: url) { data, response, error in
           if let data = data {
+            
+            let d = String(data: data,encoding: .utf8)
+            let decodedData = Data((d?.aesDecrypt()!.utf8)!)
 
               do {
-                 let res = try JSONDecoder().decode(InfoReservering.self, from: data)
+                 let res = try JSONDecoder().decode(InfoReservering.self, from: decodedData)
                 print(res)
                 completion(res)
                 return

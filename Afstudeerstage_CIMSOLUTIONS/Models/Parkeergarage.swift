@@ -25,9 +25,12 @@ func getAllParkeergarages(_ completion: @escaping ([Parkeergarage]) -> ()) {
             if let url = URL(string: "\(localhostUrl)/parkeergarages") {
                URLSession.shared.dataTask(with: url) { data, response, error in
                   if let data = data {
+                    
+                    let d = String(data: data,encoding: .utf8)
+                    let decodedData = Data((d?.aesDecrypt()!.utf8)!)
 
                       do {
-                         let res = try JSONDecoder().decode([Parkeergarage].self, from: data)
+                         let res = try JSONDecoder().decode([Parkeergarage].self, from: decodedData)
                         print(res)
                         completion(res)
                         return
