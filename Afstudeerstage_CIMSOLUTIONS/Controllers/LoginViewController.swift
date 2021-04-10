@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(_ sender: Any) {
         if(gebruikersnaamInput.text == "" || wachtwoordInput.text == ""){
-            creareAlert(title: "Error:", message: "Vul alle velden in.")
+            createAlert(title: "Error:", message: "Vul alle velden in.")
         }else{
             checkLogin(gebruikersnaam: gebruikersnaamInput.text!, wachtwoord: wachtwoordInput.text!){
                 (array) in
@@ -33,8 +33,9 @@ class LoginViewController: UIViewController {
                         defaults.set(array.Account_Id, forKey: "Account_Id")
                         defaults.set(array.Account_Actief_Kenteken, forKey: "Actief_Kenteken")
                         defaults.set(array.Account_Token, forKey: "Account_Token")
+                        self.verwijsScherm()
                     }else{
-                        self.creareAlert(title: "Error:", message: "Gebruikersnaam en wachtwoord combinatie niet correct.")
+                        self.createAlert(title: "Error:", message: "Gebruikersnaam en wachtwoord combinatie niet correct.")
                     }
                 }
             }
@@ -42,7 +43,7 @@ class LoginViewController: UIViewController {
     }
     
     //Aanmaken van een alert om de error te tonen aan de gebruiker
-    func creareAlert(title: String, message: String)
+    func createAlert(title: String, message: String)
     {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -51,6 +52,15 @@ class LoginViewController: UIViewController {
         }))
         
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func verwijsScherm(){
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = storyBoard.instantiateViewController(withIdentifier: "ControllerId") as! UITabBarController
+        loginViewController.modalPresentationStyle = .overCurrentContext
+        loginViewController.modalTransitionStyle = .crossDissolve
+        
+        self.show(loginViewController, sender: self)
     }
     
 }

@@ -20,4 +20,9 @@ class GegevensViewController: UIViewController {
         super.viewDidLoad()
 
     }
+    
+    @IBAction func logUit(_ sender: Any) {
+        self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = true
+    }
 }

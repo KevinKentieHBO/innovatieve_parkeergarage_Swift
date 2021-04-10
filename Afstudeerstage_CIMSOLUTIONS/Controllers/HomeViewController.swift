@@ -56,6 +56,8 @@ class HomeViewController: UIViewController, UITabBarDelegate, UITabBarController
             // it might be different in your case...
             let secondVC = tabBarController.viewControllers?[1] as! UINavigationController
             secondVC.popToRootViewController(animated: false)
+            let thirdVC = tabBarController.viewControllers?[2] as! UINavigationController
+            thirdVC.popToRootViewController(animated: false)
         }
     
     //Herlaad de pagina wanneer de er genavigeerd wordt naar de pagina

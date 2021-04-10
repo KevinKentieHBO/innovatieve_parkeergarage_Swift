@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R7N-Y4-vMK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xQj-Ua-AUp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -11,7 +11,8 @@
         <!--Tab Bar Controller-->
         <scene sceneID="8dF-oV-MSK">
             <objects>
-                <tabBarController id="R7N-Y4-vMK" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ControllerId" id="R7N-Y4-vMK" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="uEn-7Y-C3U"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ORX-Ow-ads">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -103,7 +104,6 @@
                     <navigationItem key="navigationItem" id="5Q0-Cr-cLO"/>
                     <connections>
                         <outlet property="gebruikersnaamInput" destination="h5k-yT-vdM" id="eQz-R0-ySU"/>
-                        <outlet property="loginButton" destination="UqS-KV-omm" id="1YU-Kx-6L7"/>
                         <outlet property="wachtwoordInput" destination="lId-mV-3a8" id="mCX-dv-exV"/>
                     </connections>
                 </viewController>
@@ -811,6 +811,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log uit"/>
                                 <connections>
+                                    <action selector="logUit:" destination="Run-da-JP7" eventType="touchUpInside" id="FGy-xw-Lrd"/>
                                     <segue destination="xQj-Ua-AUp" kind="show" id="KK1-LS-ZdX"/>
                                 </connections>
                             </button>
