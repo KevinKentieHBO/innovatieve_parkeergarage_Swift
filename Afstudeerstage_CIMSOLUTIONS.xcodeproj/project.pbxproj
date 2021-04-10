@@ -36,6 +36,7 @@
 		75C0EE112611E03100483DA2 /* MijnReserveringenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C0EE0F2611E03100483DA2 /* MijnReserveringenTableViewCell.swift */; };
 		75C0EE122611E03100483DA2 /* MijnReserveringenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C0EE102611E03100483DA2 /* MijnReserveringenTableViewCell.xib */; };
 		75D196592621A8DF00B04F11 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D196582621A8DF00B04F11 /* LoginViewController.swift */; };
+		75D196612621ACEA00B04F11 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D196602621ACEA00B04F11 /* Account.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		75C0EE0F2611E03100483DA2 /* MijnReserveringenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MijnReserveringenTableViewCell.swift; sourceTree = "<group>"; };
 		75C0EE102611E03100483DA2 /* MijnReserveringenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MijnReserveringenTableViewCell.xib; sourceTree = "<group>"; };
 		75D196582621A8DF00B04F11 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		75D196602621ACEA00B04F11 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 				75C0EDFF260E282F00483DA2 /* Reservering.swift */,
 				7509F04F261C81CB00932B3C /* Abonnement.swift */,
 				75721A4F26207B8100CA884A /* AESEncryptie.swift */,
+				75D196602621ACEA00B04F11 /* Account.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D196592621A8DF00B04F11 /* LoginViewController.swift in Sources */,
+				75D196612621ACEA00B04F11 /* Account.swift in Sources */,
 				755CCC39260BE4B200F43A5A /* GegevensViewController.swift in Sources */,
 				75C0EE0A2611C37500483DA2 /* InfoReserveringViewController.swift in Sources */,
 				75BE8451261DA4C4008CB627 /* MijnAbonnementenViewController.swift in Sources */,

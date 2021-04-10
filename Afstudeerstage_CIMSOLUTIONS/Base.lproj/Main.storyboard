@@ -93,7 +93,7 @@
                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="maakReservering:" destination="tJH-mP-U8E" eventType="touchUpInside" id="YzH-N7-wju"/>
+                                    <action selector="login:" destination="xQj-Ua-AUp" eventType="touchUpInside" id="zvz-Md-Z5o"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -101,6 +101,11 @@
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="5Q0-Cr-cLO"/>
+                    <connections>
+                        <outlet property="gebruikersnaamInput" destination="h5k-yT-vdM" id="eQz-R0-ySU"/>
+                        <outlet property="loginButton" destination="UqS-KV-omm" id="1YU-Kx-6L7"/>
+                        <outlet property="wachtwoordInput" destination="lId-mV-3a8" id="mCX-dv-exV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPc-3c-bdJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
