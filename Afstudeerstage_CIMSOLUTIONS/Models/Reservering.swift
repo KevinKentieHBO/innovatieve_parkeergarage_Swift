@@ -128,7 +128,7 @@ func getReserveringenVanGebruiker(_ completion: @escaping ([InfoReservering]) ->
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let autoId = 1
+    let autoId = UserDefaults.standard.integer(forKey: "Actief_Kenteken_Id")
     if let url = URL(string: "\(localhostUrl)/reserveringen/"+String(autoId)) {
        URLSession.shared.dataTask(with: url) { data, response, error in
           if let data = data {
@@ -155,7 +155,7 @@ func getZojuistGemaakteReservering(datum : String, begintijd : String, eindtijd 
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let autoId = 1
+    let autoId = UserDefaults.standard.integer(forKey: "Actief_Kenteken_Id")
     if let url = URL(string:"\(localhostUrl)/reservering/get/\(datum)/\(begintijd)/\(eindtijd)/\(autoId)/\(parkeergarageid)") {
        URLSession.shared.dataTask(with: url) { data, response, error in
           if let data = data {

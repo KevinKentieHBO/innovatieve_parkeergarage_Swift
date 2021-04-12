@@ -15,6 +15,7 @@ class HomeViewController: UIViewController, UITabBarDelegate, UITabBarController
     //Connectie met de TableView uit de storyboard
     @IBOutlet weak var HomeReserveringenTabel: UITableView!
     @IBOutlet weak var HomeVerlopenReserveringenTabel: UITableView!
+    @IBOutlet weak var NaamLabel: UILabel!
     
     
 //Variabelen
@@ -48,6 +49,9 @@ class HomeViewController: UIViewController, UITabBarDelegate, UITabBarController
         tabBarController?.delegate = self
         HomeReserveringenTabel.reloadData()
         HomeVerlopenReserveringenTabel.reloadData()
+        
+        //Zet de naam van de gebruiker op de homepagina
+        NaamLabel.text = UserDefaults.standard.string(forKey: "Bestuurder_Naam")
     }
     
     //Zorgt ervoor dat bij het tab parkeren altijd naar de root wordt genavigeert.

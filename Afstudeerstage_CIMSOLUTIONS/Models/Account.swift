@@ -11,7 +11,8 @@ struct Account : Decodable{
     let Resultaat : String
     let Account_Id : Int
     let Account_Token : String
-    let Account_Actief_Kenteken : String
+    let Account_Actief_Kenteken_Id : Int
+    let Bestuurder_Naam : String
 }
 
 func checkLogin(gebruikersnaam : String, wachtwoord : String, _ completion: @escaping (Account) -> ()) {

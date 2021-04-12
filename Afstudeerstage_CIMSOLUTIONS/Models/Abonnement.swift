@@ -59,7 +59,7 @@ func getAbonnementParkeergarage(parkeergarageId : Int, _ completion: @escaping (
 //geef alle abonnementen van een auto terug met een Rest Api
 func getAbonnementAutoId(_ completion: @escaping ([AbonnementGebruiker]) -> ()) {
     
-    let autoId : Int = 1
+    let autoId : Int = UserDefaults.standard.integer(forKey: "Actief_Kenteken_Id")
     
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"

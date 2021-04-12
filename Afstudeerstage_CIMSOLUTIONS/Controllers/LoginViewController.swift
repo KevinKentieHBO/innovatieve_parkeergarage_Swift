@@ -31,8 +31,9 @@ class LoginViewController: UIViewController {
                     if(array.Resultaat == "true"){
                         let defaults = UserDefaults.standard
                         defaults.set(array.Account_Id, forKey: "Account_Id")
-                        defaults.set(array.Account_Actief_Kenteken, forKey: "Actief_Kenteken")
+                        defaults.set(array.Account_Actief_Kenteken_Id, forKey: "Actief_Kenteken_Id")
                         defaults.set(array.Account_Token, forKey: "Account_Token")
+                        defaults.set(array.Bestuurder_Naam, forKey: "Bestuurder_Naam")
                         self.verwijsScherm()
                     }else{
                         self.createAlert(title: "Error:", message: "Gebruikersnaam en wachtwoord combinatie niet correct.")
