@@ -148,7 +148,7 @@ class ReserverenViewController: UIViewController {
             let gereserveerdeDatum = datumFormatter.string(from: datePicker.date)
 
             //functie die de reservering naar de database voert.
-            let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id: 1, reservering_Parkeergarage_Id: parkeergarageGekozen.parkeergarage_Id)
+            let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id:  UserDefaults.standard.integer(forKey: "Actief_Kenteken_Id"), reservering_Parkeergarage_Id: parkeergarageGekozen.parkeergarage_Id)
                 createReservering(res: res)
             
             //Wacht tot reservering is doorgevoerd

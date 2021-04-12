@@ -30,12 +30,19 @@ struct AbonnementGebruiker : Decodable{
 //geef alle abonnementen van een parkeergarage terug met een Rest Api
 func getAbonnementParkeergarage(parkeergarageId : Int, _ completion: @escaping ([Abonnement]) -> ()) {
     
+    let encodedParkeergarageId = String(parkeergarageId).aesEncrypt()?.stringByAddingPercentEncodingToData()
     
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let restURL = "\(localhostUrl)/abonnement/\(parkeergarageId)"
+    let userId = UserDefaults.standard.integer(forKey: "Account_Id")
+    let token = UserDefaults.standard.string(forKey: "Account_Token")
+    let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
+    let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
+    
+    let restURL = "\(herokuUrl)/abonnement/\(encodedParkeergarageId!)/\(encodedUserId!)/\(encodedToken!)"
     print(restURL)
+    
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
         if let data = data {
@@ -61,10 +68,16 @@ func getAbonnementAutoId(_ completion: @escaping ([AbonnementGebruiker]) -> ()) 
     
     let autoId : Int = UserDefaults.standard.integer(forKey: "Actief_Kenteken_Id")
     
+    let userId = UserDefaults.standard.integer(forKey: "Account_Id")
+    let token = UserDefaults.standard.string(forKey: "Account_Token")
+    let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
+    let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
+    let encodedAutoId = String(autoId).aesEncrypt()?.stringByAddingPercentEncodingToData()
+    
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let restURL = "\(localhostUrl)/abonnement/get/\(autoId)"
+    let restURL = "\(herokuUrl)/abonnement/get/\(encodedAutoId!)/\(encodedUserId!)/\(encodedToken!)"
     print(restURL)
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in

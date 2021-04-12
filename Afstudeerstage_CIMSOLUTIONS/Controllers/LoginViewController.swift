@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var gebruikersnaamInput: UITextField!
@@ -16,8 +16,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.gebruikersnaamInput.delegate = self
+        self.wachtwoordInput.delegate = self
     }
     
     
@@ -34,6 +34,8 @@ class LoginViewController: UIViewController {
                         defaults.set(array.Account_Actief_Kenteken_Id, forKey: "Actief_Kenteken_Id")
                         defaults.set(array.Account_Token, forKey: "Account_Token")
                         defaults.set(array.Bestuurder_Naam, forKey: "Bestuurder_Naam")
+                        defaults.set(true, forKey: "isUserLoggedIn")
+                        defaults.synchronize()
                         self.verwijsScherm()
                     }else{
                         self.createAlert(title: "Error:", message: "Gebruikersnaam en wachtwoord combinatie niet correct.")
@@ -64,4 +66,8 @@ class LoginViewController: UIViewController {
         self.show(loginViewController, sender: self)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            self.view.endEditing(true)
+            return false
+        }
 }

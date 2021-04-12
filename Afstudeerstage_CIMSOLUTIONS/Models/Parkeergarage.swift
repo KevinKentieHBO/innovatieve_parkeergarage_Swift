@@ -22,7 +22,13 @@ struct Parkeergarage : Decodable {
 func getAllParkeergarages(_ completion: @escaping ([Parkeergarage]) -> ()) {
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
-            if let url = URL(string: "\(localhostUrl)/parkeergarages") {
+    
+    let userId = UserDefaults.standard.integer(forKey: "Account_Id")
+    let token = UserDefaults.standard.string(forKey: "Account_Token")
+    let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
+    let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
+    
+            if let url = URL(string: "\(herokuUrl)/parkeergarages/\(encodedUserId!)/\(encodedToken!)") {
                URLSession.shared.dataTask(with: url) { data, response, error in
                   if let data = data {
                     

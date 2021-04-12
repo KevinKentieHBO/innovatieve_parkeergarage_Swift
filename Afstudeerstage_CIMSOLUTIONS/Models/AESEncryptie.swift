@@ -96,3 +96,10 @@ extension Data {
         return self.map { String(format: format, $0) }.joined()
     }
 }
+
+extension String{
+    public func stringByAddingPercentEncodingToData() -> String? {
+        let finalString = self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)?.replacingOccurrences(of: "&", with: "%26").replacingOccurrences(of: "+", with: "%2B")
+        return finalString
+    }
+}
