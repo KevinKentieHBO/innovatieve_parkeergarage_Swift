@@ -63,7 +63,7 @@ func createReservering(res : makeReservering) {
     let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
     let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
   
-    let restURL = "\(herokuUrl)/reservering/\(encodedResDat!)/\(encodedResBtijd!)/\(encodedResEtijd!)/\(encodedResAutoId!)/\(encodedResParId!)/\(encodedUserId!)/\(encodedToken!)"
+    let restURL = "\(localhostUrl)/reservering/\(encodedResDat!)/\(encodedResBtijd!)/\(encodedResEtijd!)/\(encodedResAutoId!)/\(encodedResParId!)/\(encodedUserId!)/\(encodedToken!)"
     
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
@@ -86,7 +86,7 @@ func verwijderReserveringRest(res : InfoReservering, _ completion: @escaping (Re
     let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
     let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
     
-    let restURL = "\(herokuUrl)/reservering/verwijder/\(encodedResId!)/\(encodedUserId!)/\(encodedToken!)"
+    let restURL = "\(localhostUrl)/reservering/verwijder/\(encodedResId!)/\(encodedUserId!)/\(encodedToken!)"
     print(restURL)
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
@@ -124,7 +124,7 @@ func updateReserveringRest(res : InfoReservering, _ completion: @escaping (Respo
     let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
     let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
     
-    let restURL = "\(herokuUrl)/reservering/update/\(encodedResDat!)/\(encodedResBtijd!)/\(encodedResEtijd!)/\(encodedResId!)/\(encodedResParId!)/\(encodedUserId!)/\(encodedToken!)"
+    let restURL = "\(localhostUrl)/reservering/update/\(encodedResDat!)/\(encodedResBtijd!)/\(encodedResEtijd!)/\(encodedResId!)/\(encodedResParId!)/\(encodedUserId!)/\(encodedToken!)"
     print(restURL)
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in
@@ -159,7 +159,9 @@ func getReserveringenVanGebruiker(_ completion: @escaping ([InfoReservering]) ->
     let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
     let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
     
-    if let url = URL(string: "\(herokuUrl)/reserveringen/\(encodedAutoId!)/\(encodedUserId!)/\(encodedToken!)") {
+    print("\(localhostUrl)/reserveringen/\(encodedAutoId!)/\(encodedUserId!)/\(encodedToken!)")
+    
+    if let url = URL(string: "\(localhostUrl)/reserveringen/\(encodedAutoId!)/\(encodedUserId!)/\(encodedToken!)") {
        URLSession.shared.dataTask(with: url) { data, response, error in
           if let data = data {
             
@@ -195,7 +197,7 @@ func getZojuistGemaakteReservering(datum : String, begintijd : String, eindtijd 
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
 
-    if let url = URL(string:"\(herokuUrl)/reservering/get/\(encodedDatum!)/\(encodedBegintijd!)/\(encodedEindtijd!)/\(encodedAutoId!)/\(encodedParkeergarageId!)/\(encodedUserId!)/\(encodedToken!)") {
+    if let url = URL(string:"\(localhostUrl)/reservering/get/\(encodedDatum!)/\(encodedBegintijd!)/\(encodedEindtijd!)/\(encodedAutoId!)/\(encodedParkeergarageId!)/\(encodedUserId!)/\(encodedToken!)") {
        URLSession.shared.dataTask(with: url) { data, response, error in
           if let data = data {
             

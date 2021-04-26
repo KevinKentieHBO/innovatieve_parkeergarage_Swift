@@ -7,11 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7506645626286CCB00EBF05A /* KentekenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7506645526286CCB00EBF05A /* KentekenViewController.swift */; };
+		7506645B26286E6600EBF05A /* Auto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7506645A26286E6600EBF05A /* Auto.swift */; };
+		75066461262872DD00EBF05A /* KentekenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7506645F262872DD00EBF05A /* KentekenTableViewCell.swift */; };
+		75066462262872DD00EBF05A /* KentekenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75066460262872DD00EBF05A /* KentekenTableViewCell.xib */; };
+		750664682628774900EBF05A /* KentekenToevoegenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750664672628774900EBF05A /* KentekenToevoegenViewController.swift */; };
 		7509F038261706C300932B3C /* WijzigReserverenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509F037261706C300932B3C /* WijzigReserverenViewController.swift */; };
 		7509F040261C7B8600932B3C /* AbonnementParkeergarageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509F03F261C7B8600932B3C /* AbonnementParkeergarageViewController.swift */; };
 		7509F049261C7F8D00932B3C /* AbonnementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509F047261C7F8D00932B3C /* AbonnementTableViewCell.swift */; };
 		7509F04A261C7F8D00932B3C /* AbonnementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7509F048261C7F8D00932B3C /* AbonnementTableViewCell.xib */; };
 		7509F050261C81CB00932B3C /* Abonnement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509F04F261C81CB00932B3C /* Abonnement.swift */; };
+		754636A32636C9BF00B04F5F /* Betaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754636A22636C9BF00B04F5F /* Betaling.swift */; };
 		755CCBE8260B663900F43A5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBE7260B663900F43A5A /* AppDelegate.swift */; };
 		755CCBEA260B663900F43A5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBE9260B663900F43A5A /* SceneDelegate.swift */; };
 		755CCBEC260B663900F43A5A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBEB260B663900F43A5A /* HomeViewController.swift */; };
@@ -37,6 +43,7 @@
 		75C0EE122611E03100483DA2 /* MijnReserveringenTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75C0EE102611E03100483DA2 /* MijnReserveringenTableViewCell.xib */; };
 		75D196592621A8DF00B04F11 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D196582621A8DF00B04F11 /* LoginViewController.swift */; };
 		75D196612621ACEA00B04F11 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D196602621ACEA00B04F11 /* Account.swift */; };
+		75D19666262717DB00B04F11 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D19665262717DB00B04F11 /* File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,11 +64,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7506645526286CCB00EBF05A /* KentekenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KentekenViewController.swift; sourceTree = "<group>"; };
+		7506645A26286E6600EBF05A /* Auto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auto.swift; sourceTree = "<group>"; };
+		7506645F262872DD00EBF05A /* KentekenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KentekenTableViewCell.swift; sourceTree = "<group>"; };
+		75066460262872DD00EBF05A /* KentekenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KentekenTableViewCell.xib; sourceTree = "<group>"; };
+		750664672628774900EBF05A /* KentekenToevoegenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KentekenToevoegenViewController.swift; sourceTree = "<group>"; };
 		7509F037261706C300932B3C /* WijzigReserverenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WijzigReserverenViewController.swift; sourceTree = "<group>"; };
 		7509F03F261C7B8600932B3C /* AbonnementParkeergarageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbonnementParkeergarageViewController.swift; sourceTree = "<group>"; };
 		7509F047261C7F8D00932B3C /* AbonnementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbonnementTableViewCell.swift; sourceTree = "<group>"; };
 		7509F048261C7F8D00932B3C /* AbonnementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbonnementTableViewCell.xib; sourceTree = "<group>"; };
 		7509F04F261C81CB00932B3C /* Abonnement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abonnement.swift; sourceTree = "<group>"; };
+		754636A22636C9BF00B04F5F /* Betaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Betaling.swift; sourceTree = "<group>"; };
 		755CCBE4260B663900F43A5A /* Afstudeerstage_CIMSOLUTIONS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Afstudeerstage_CIMSOLUTIONS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		755CCBE7260B663900F43A5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		755CCBE9260B663900F43A5A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +106,7 @@
 		75C0EE102611E03100483DA2 /* MijnReserveringenTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MijnReserveringenTableViewCell.xib; sourceTree = "<group>"; };
 		75D196582621A8DF00B04F11 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		75D196602621ACEA00B04F11 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		75D19665262717DB00B04F11 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				755CCBF0260B663B00F43A5A /* Assets.xcassets */,
+				75D19665262717DB00B04F11 /* File.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -206,6 +221,8 @@
 				7509F04F261C81CB00932B3C /* Abonnement.swift */,
 				75721A4F26207B8100CA884A /* AESEncryptie.swift */,
 				75D196602621ACEA00B04F11 /* Account.swift */,
+				7506645A26286E6600EBF05A /* Auto.swift */,
+				754636A22636C9BF00B04F5F /* Betaling.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +250,8 @@
 				7509F037261706C300932B3C /* WijzigReserverenViewController.swift */,
 				75BE8450261DA4C4008CB627 /* MijnAbonnementenViewController.swift */,
 				75D196582621A8DF00B04F11 /* LoginViewController.swift */,
+				7506645526286CCB00EBF05A /* KentekenViewController.swift */,
+				750664672628774900EBF05A /* KentekenToevoegenViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -246,6 +265,8 @@
 				7509F048261C7F8D00932B3C /* AbonnementTableViewCell.xib */,
 				75BE8455261DA6AE008CB627 /* MijnAbonnementenTableViewCell.swift */,
 				75BE8456261DA6AE008CB627 /* MijnAbonnementenTableViewCell.xib */,
+				7506645F262872DD00EBF05A /* KentekenTableViewCell.swift */,
+				75066460262872DD00EBF05A /* KentekenTableViewCell.xib */,
 			);
 			path = Subclass;
 			sourceTree = "<group>";
@@ -357,6 +378,7 @@
 				755CCBF1260B663B00F43A5A /* Assets.xcassets in Resources */,
 				7509F04A261C7F8D00932B3C /* AbonnementTableViewCell.xib in Resources */,
 				75BE8458261DA6AE008CB627 /* MijnAbonnementenTableViewCell.xib in Resources */,
+				75066462262872DD00EBF05A /* KentekenTableViewCell.xib in Resources */,
 				755CCBEF260B663900F43A5A /* Main.storyboard in Resources */,
 				75C0EE122611E03100483DA2 /* MijnReserveringenTableViewCell.xib in Resources */,
 			);
@@ -388,11 +410,14 @@
 				755CCC39260BE4B200F43A5A /* GegevensViewController.swift in Sources */,
 				75C0EE0A2611C37500483DA2 /* InfoReserveringViewController.swift in Sources */,
 				75BE8451261DA4C4008CB627 /* MijnAbonnementenViewController.swift in Sources */,
+				7506645B26286E6600EBF05A /* Auto.swift in Sources */,
 				7509F049261C7F8D00932B3C /* AbonnementTableViewCell.swift in Sources */,
+				75D19666262717DB00B04F11 /* File.swift in Sources */,
 				755CCC3E260BE4BD00F43A5A /* SaldoViewController.swift in Sources */,
 				75721A5026207B8100CA884A /* AESEncryptie.swift in Sources */,
 				755CCBEC260B663900F43A5A /* HomeViewController.swift in Sources */,
 				755CCC1B260B66CC00F43A5A /* Betaaltarief.swift in Sources */,
+				750664682628774900EBF05A /* KentekenToevoegenViewController.swift in Sources */,
 				755CCBE8260B663900F43A5A /* AppDelegate.swift in Sources */,
 				7509F040261C7B8600932B3C /* AbonnementParkeergarageViewController.swift in Sources */,
 				755CCC34260BE49A00F43A5A /* ParkerenViewController.swift in Sources */,
@@ -401,10 +426,13 @@
 				7509F038261706C300932B3C /* WijzigReserverenViewController.swift in Sources */,
 				755CCBEA260B663900F43A5A /* SceneDelegate.swift in Sources */,
 				75C0EE112611E03100483DA2 /* MijnReserveringenTableViewCell.swift in Sources */,
+				75066461262872DD00EBF05A /* KentekenTableViewCell.swift in Sources */,
+				7506645626286CCB00EBF05A /* KentekenViewController.swift in Sources */,
 				75BE8457261DA6AE008CB627 /* MijnAbonnementenTableViewCell.swift in Sources */,
 				75C0EE052611C1B300483DA2 /* MijnReserveringenViewController.swift in Sources */,
 				7509F050261C81CB00932B3C /* Abonnement.swift in Sources */,
 				75C0EDF6260CC3A200483DA2 /* Parkeergarage.swift in Sources */,
+				754636A32636C9BF00B04F5F /* Betaling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

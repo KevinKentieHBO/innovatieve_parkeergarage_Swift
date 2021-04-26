@@ -27,7 +27,7 @@ func getTestAllTarieven(_ completion: @escaping ([Betaaltarief]) -> ()) {
     let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
     let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
     
-            if let url = URL(string: "\(herokuUrl)/betaaltarief/\(encodedUserId!)/\(encodedToken!)") {
+            if let url = URL(string: "\(localhostUrl)/betaaltarief/\(encodedUserId!)/\(encodedToken!)") {
                URLSession.shared.dataTask(with: url) { data, response, error in
                   if let data = data {
                     

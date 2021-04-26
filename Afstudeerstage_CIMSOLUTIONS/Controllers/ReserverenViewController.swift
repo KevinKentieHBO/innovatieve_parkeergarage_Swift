@@ -138,26 +138,36 @@ class ReserverenViewController: UIViewController {
             //Opzetten van een error alert
             creareAlert(title: "Error", message: "Vul de invoervelden in voor het bevestigen van de reservering")
         }else{
-            //Formatter voor het wegzetten van de data
-            let tijdFormatter = DateFormatter()
-            let datumFormatter = DateFormatter()
-            tijdFormatter.dateFormat = "HH:mm"
-            datumFormatter.dateFormat = "dd-MM-yyyy"
-            let gereserveerdeTijd = tijdFormatter.string(from: datePicker.date)
-            let gereserveerdeTijdEind = tijdFormatter.string(from: datePickerEind.date)
-            let gereserveerdeDatum = datumFormatter.string(from: datePicker.date)
-
-            //functie die de reservering naar de database voert.
-            let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id:  UserDefaults.standard.integer(forKey: "Actief_Kenteken_Id"), reservering_Parkeergarage_Id: parkeergarageGekozen.parkeergarage_Id)
-                createReservering(res: res)
-            
-            //Wacht tot reservering is doorgevoerd
-            sleep(1);
-            
-            //Navigeer naar de zojuist gemaakte reservering
-            getZojuistGemaakteReservering(datum: gereserveerdeDatum, begintijd: gereserveerdeTijd, eindtijd: gereserveerdeTijdEind, parkeergarageid: parkeergarageGekozen.parkeergarage_Id){(array) in
+            checkSaldo(parkeergarageid: parkeergarageGekozen.parkeergarage_Id){(res) in
                 DispatchQueue.main.async {
-                    self.verwijsNaarInfo(res: array)
+                    if res.resultaat == "true" {
+                    
+                        //Formatter voor het wegzetten van de data
+                        let tijdFormatter = DateFormatter()
+                        let datumFormatter = DateFormatter()
+                        tijdFormatter.dateFormat = "HH:mm"
+                        datumFormatter.dateFormat = "dd-MM-yyyy"
+                        let gereserveerdeTijd = tijdFormatter.string(from: self.datePicker.date)
+                        let gereserveerdeTijdEind = tijdFormatter.string(from: self.datePickerEind.date)
+                        let gereserveerdeDatum = datumFormatter.string(from: self.datePicker.date)
+
+                        //functie die de reservering naar de database voert.
+                        let res = makeReservering(reservering_Begintijd: gereserveerdeTijd, reservering_Eindtijd: gereserveerdeTijdEind, reservering_Datum: gereserveerdeDatum, reservering_Auto_Id:  UserDefaults.standard.integer(forKey: "Actief_Kenteken_Id"), reservering_Parkeergarage_Id: self.parkeergarageGekozen.parkeergarage_Id)
+                            createReservering(res: res)
+                        
+                        //Wacht tot reservering is doorgevoerd
+                        sleep(1);
+                        
+                        //Navigeer naar de zojuist gemaakte reservering
+                        getZojuistGemaakteReservering(datum: gereserveerdeDatum, begintijd: gereserveerdeTijd, eindtijd: gereserveerdeTijdEind, parkeergarageid: self.parkeergarageGekozen.parkeergarage_Id){(array) in
+                            DispatchQueue.main.async {
+                                self.verwijsNaarInfo(res: array)
+                            }
+                        }
+                        
+                    }else{
+                        self.creareAlert(title: "Error", message: String(format: "Uw saldo is te laag, het minimale saldo om deze reservering te maken is: €%.2f", res.dagtarief))
+                    }
                 }
             }
         }

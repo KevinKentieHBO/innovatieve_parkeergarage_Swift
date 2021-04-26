@@ -22,6 +22,8 @@ class HomeViewController: UIViewController, UITabBarDelegate, UITabBarController
     //lege lijst met reserveringen
     private var dataAankomend: [InfoReservering] = []
     private var dataVerlopen: [InfoReservering] = []
+    private var data3Aankomend: [InfoReservering] = []
+    private var data3Verlopen: [InfoReservering] = []
 
     
     
@@ -80,6 +82,8 @@ class HomeViewController: UIViewController, UITabBarDelegate, UITabBarController
                             self.dataVerlopen.append(reservering)
                         }
                     }
+                    self.data3Aankomend = Array(self.dataAankomend.suffix(3))
+                    self.data3Verlopen = Array(self.dataVerlopen.prefix(3))
                     self.HomeVerlopenReserveringenTabel.allowsSelection = false;
                     self.HomeReserveringenTabel.reloadData()
                     self.HomeVerlopenReserveringenTabel.reloadData();
@@ -123,7 +127,7 @@ class HomeViewController: UIViewController, UITabBarDelegate, UITabBarController
 extension HomeViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let reservering = dataAankomend[indexPath.row]
+        let reservering = data3Aankomend[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let newVC = storyboard.instantiateViewController(withIdentifier: "infoReserverenVCIdentifier") as! InfoReserveringViewController
         newVC.gekozenReservering = reservering
@@ -136,9 +140,9 @@ extension HomeViewController: UITableViewDataSource{
     //toon x aantal cellen
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == HomeReserveringenTabel{
-            return dataAankomend.count
+            return data3Aankomend.count
         }else{
-            return dataVerlopen.count
+            return data3Verlopen.count
         }
     }
     
@@ -147,16 +151,16 @@ extension HomeViewController: UITableViewDataSource{
         if tableView == HomeReserveringenTabel{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MijnReserveringenTableViewCell",
                                                      for: indexPath) as! MijnReserveringenTableViewCell
-            cell.CellDatum.text = dataAankomend[indexPath.row].reservering_Datum
-            cell.CellTijd.text = "\(dataAankomend[indexPath.row].reservering_Begintijd) - \(dataAankomend[indexPath.row].reservering_Eindtijd)"
-            cell.CellParkeergarage.text = dataAankomend[indexPath.row].reservering_Parkeergarage
+            cell.CellDatum.text = data3Aankomend[indexPath.row].reservering_Datum
+            cell.CellTijd.text = "\(data3Aankomend[indexPath.row].reservering_Begintijd) - \(data3Aankomend[indexPath.row].reservering_Eindtijd)"
+            cell.CellParkeergarage.text = data3Aankomend[indexPath.row].reservering_Parkeergarage
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "MijnReserveringenTableViewCell",
                                                      for: indexPath) as! MijnReserveringenTableViewCell
-            cell.CellDatum.text = dataVerlopen[indexPath.row].reservering_Datum
-            cell.CellTijd.text = "\(dataVerlopen[indexPath.row].reservering_Begintijd) - \(dataVerlopen[indexPath.row].reservering_Eindtijd)"
-            cell.CellParkeergarage.text = dataVerlopen[indexPath.row].reservering_Parkeergarage
+            cell.CellDatum.text = data3Verlopen[indexPath.row].reservering_Datum
+            cell.CellTijd.text = "\(data3Verlopen[indexPath.row].reservering_Begintijd) - \(data3Verlopen[indexPath.row].reservering_Eindtijd)"
+            cell.CellParkeergarage.text = data3Verlopen[indexPath.row].reservering_Parkeergarage
             return cell
         }
     }

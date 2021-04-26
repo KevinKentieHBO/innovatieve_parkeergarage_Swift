@@ -33,8 +33,18 @@ class GegevensViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getUserData{(data) in
+            DispatchQueue.main.async {
+                self.emailLabel.text = data.Account_Email
+                self.geboortedatumLabel.text = data.Bestuurder_Geboortedatum
+                self.saldoLabel.text = String(format: "€%.2f", data.Account_Saldo)
+            }
+        }
+    }
+    
     @IBAction func logUit(_ sender: Any) {
-        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+        UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
         UserDefaults.standard.synchronize()
         self.tabBarController?.tabBar.isHidden = true
         self.navigationController?.navigationBar.isHidden = true

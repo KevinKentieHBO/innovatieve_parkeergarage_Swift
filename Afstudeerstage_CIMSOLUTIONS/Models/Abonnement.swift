@@ -40,7 +40,7 @@ func getAbonnementParkeergarage(parkeergarageId : Int, _ completion: @escaping (
     let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
     let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
     
-    let restURL = "\(herokuUrl)/abonnement/\(encodedParkeergarageId!)/\(encodedUserId!)/\(encodedToken!)"
+    let restURL = "\(localhostUrl)/abonnement/\(encodedParkeergarageId!)/\(encodedUserId!)/\(encodedToken!)"
     print(restURL)
     
     if let url = URL(string: restURL) {
@@ -77,7 +77,7 @@ func getAbonnementAutoId(_ completion: @escaping ([AbonnementGebruiker]) -> ()) 
     let herokuUrl : String = "https://javainnovatieveparkeergarage.herokuapp.com"
     let localhostUrl : String = "http://localhost:8080"
     
-    let restURL = "\(herokuUrl)/abonnement/get/\(encodedAutoId!)/\(encodedUserId!)/\(encodedToken!)"
+    let restURL = "\(localhostUrl)/abonnement/get/\(encodedAutoId!)/\(encodedUserId!)/\(encodedToken!)"
     print(restURL)
     if let url = URL(string: restURL) {
        URLSession.shared.dataTask(with: url) { data, response, error in

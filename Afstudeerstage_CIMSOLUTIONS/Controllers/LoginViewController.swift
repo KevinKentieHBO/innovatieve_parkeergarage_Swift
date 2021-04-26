@@ -14,8 +14,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var wachtwoordInput: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        UserDefaults.standard.synchronize()
+        if UserDefaults.standard.bool(forKey: "isUserLoggedIn"){
+            DispatchQueue.main.async {
+                self.verwijsScherm()
+            }
+        }
         self.gebruikersnaamInput.delegate = self
         self.wachtwoordInput.delegate = self
     }
@@ -35,6 +42,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         defaults.set(array.Account_Token, forKey: "Account_Token")
                         defaults.set(array.Bestuurder_Naam, forKey: "Bestuurder_Naam")
                         defaults.set(true, forKey: "isUserLoggedIn")
+                        UserDefaults.standard.synchronize()
                         defaults.synchronize()
                         self.verwijsScherm()
                     }else{
@@ -62,7 +70,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let loginViewController = storyBoard.instantiateViewController(withIdentifier: "ControllerId") as! UITabBarController
         loginViewController.modalPresentationStyle = .overCurrentContext
         loginViewController.modalTransitionStyle = .crossDissolve
-        
         self.show(loginViewController, sender: self)
     }
     

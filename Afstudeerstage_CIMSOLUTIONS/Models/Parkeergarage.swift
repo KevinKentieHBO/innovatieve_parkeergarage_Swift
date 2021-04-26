@@ -28,7 +28,7 @@ func getAllParkeergarages(_ completion: @escaping ([Parkeergarage]) -> ()) {
     let encodedUserId = String(userId).aesEncrypt()?.stringByAddingPercentEncodingToData()
     let encodedToken = String(token!).aesEncrypt()?.stringByAddingPercentEncodingToData()
     
-            if let url = URL(string: "\(herokuUrl)/parkeergarages/\(encodedUserId!)/\(encodedToken!)") {
+            if let url = URL(string: "\(localhostUrl)/parkeergarages/\(encodedUserId!)/\(encodedToken!)") {
                URLSession.shared.dataTask(with: url) { data, response, error in
                   if let data = data {
                     
