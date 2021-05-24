@@ -53,6 +53,9 @@ class SaldoViewController: UIViewController {
                 if saldo.resultaat == "true"{
                     self.createAlert(title: "Succes", message: "Saldo is met \(saldofield!) opgehoogd")
                     self.viewDidLoad()
+                }else{
+                    self.createAlert(title: "Error", message: "Saldo is met niet opgehoogd")
+                    self.viewDidLoad()
                 }
                }
             }

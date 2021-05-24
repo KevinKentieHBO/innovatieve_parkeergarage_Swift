@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xQj-Ua-AUp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xQj-Ua-AUp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1001,6 +1001,15 @@
                                     <segue destination="2PO-w1-DCd" kind="show" id="Kxl-In-uHv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJC-82-hzD">
+                                <rect key="frame" x="348" y="88" width="21" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" image="location" catalog="system"/>
+                                <connections>
+                                    <segue destination="myn-w0-Vqn" kind="show" id="mGn-d0-f7t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zw2-Ve-g6e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1057,7 +1066,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€0,00" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p1S-5V-AGI">
                                 <rect key="frame" x="206" y="241" width="119" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42L-Wo-mdA">
@@ -1134,12 +1143,43 @@
             </objects>
             <point key="canvasLocation" x="2107.2463768115945" y="1119.6428571428571"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="1Mi-rb-FI6">
+            <objects>
+                <viewController id="myn-w0-Vqn" customClass="MapViewController" customModule="Afstudeerstage_CIMSOLUTIONS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aoe-bl-TPv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="WOP-FF-fcG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ryr-tL-MeT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="WOP-FF-fcG" firstAttribute="leading" secondItem="ryr-tL-MeT" secondAttribute="leading" id="aqn-D5-rvp"/>
+                            <constraint firstItem="ryr-tL-MeT" firstAttribute="bottom" secondItem="WOP-FF-fcG" secondAttribute="bottom" id="h4u-M1-Q3X"/>
+                            <constraint firstItem="WOP-FF-fcG" firstAttribute="top" secondItem="ryr-tL-MeT" secondAttribute="top" id="hsb-cs-vEk"/>
+                            <constraint firstItem="ryr-tL-MeT" firstAttribute="trailing" secondItem="WOP-FF-fcG" secondAttribute="trailing" id="n51-HY-SFy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zlq-15-gXl"/>
+                    <connections>
+                        <outlet property="mapView" destination="WOP-FF-fcG" id="riD-6Q-S0N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wZ-jp-OPn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2862" y="1120"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CIMSOLUTIONS-BV-logo-637480317229014847" width="438" height="76"/>
         <image name="car" catalog="system" width="128" height="93"/>
         <image name="eurosign.circle" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="location" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

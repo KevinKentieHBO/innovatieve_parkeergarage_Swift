@@ -17,6 +17,7 @@
 		7509F049261C7F8D00932B3C /* AbonnementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509F047261C7F8D00932B3C /* AbonnementTableViewCell.swift */; };
 		7509F04A261C7F8D00932B3C /* AbonnementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7509F048261C7F8D00932B3C /* AbonnementTableViewCell.xib */; };
 		7509F050261C81CB00932B3C /* Abonnement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509F04F261C81CB00932B3C /* Abonnement.swift */; };
+		754231D8263FE40100B3F932 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754231D7263FE40100B3F932 /* MapViewController.swift */; };
 		754636A32636C9BF00B04F5F /* Betaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754636A22636C9BF00B04F5F /* Betaling.swift */; };
 		755CCBE8260B663900F43A5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBE7260B663900F43A5A /* AppDelegate.swift */; };
 		755CCBEA260B663900F43A5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755CCBE9260B663900F43A5A /* SceneDelegate.swift */; };
@@ -74,6 +75,7 @@
 		7509F047261C7F8D00932B3C /* AbonnementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbonnementTableViewCell.swift; sourceTree = "<group>"; };
 		7509F048261C7F8D00932B3C /* AbonnementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AbonnementTableViewCell.xib; sourceTree = "<group>"; };
 		7509F04F261C81CB00932B3C /* Abonnement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Abonnement.swift; sourceTree = "<group>"; };
+		754231D7263FE40100B3F932 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		754636A22636C9BF00B04F5F /* Betaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Betaling.swift; sourceTree = "<group>"; };
 		755CCBE4260B663900F43A5A /* Afstudeerstage_CIMSOLUTIONS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Afstudeerstage_CIMSOLUTIONS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		755CCBE7260B663900F43A5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				755CCBEB260B663900F43A5A /* HomeViewController.swift */,
 				7509F03F261C7B8600932B3C /* AbonnementParkeergarageViewController.swift */,
 				755CCC33260BE49A00F43A5A /* ParkerenViewController.swift */,
+				754231D7263FE40100B3F932 /* MapViewController.swift */,
 				755CCC38260BE4B200F43A5A /* GegevensViewController.swift */,
 				755CCC3D260BE4BD00F43A5A /* SaldoViewController.swift */,
 				75C0EDFA260DE63E00483DA2 /* ReserverenViewController.swift */,
@@ -432,6 +435,7 @@
 				75C0EE052611C1B300483DA2 /* MijnReserveringenViewController.swift in Sources */,
 				7509F050261C81CB00932B3C /* Abonnement.swift in Sources */,
 				75C0EDF6260CC3A200483DA2 /* Parkeergarage.swift in Sources */,
+				754231D8263FE40100B3F932 /* MapViewController.swift in Sources */,
 				754636A32636C9BF00B04F5F /* Betaling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

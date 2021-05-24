@@ -75,7 +75,7 @@ class HomeViewController: UIViewController, UITabBarDelegate, UITabBarController
                     for reservering in array{
                         
                         //Als de huidige datum onder de datum van de begintijd zit, voeg de reservering aan dataAankomend toe
-                        if(self.checkReserveringVoorbij(begintijd: reservering.reservering_Begintijd, datum: reservering.reservering_Datum)){
+                        if(self.checkReserveringVoorbij(begintijd: reservering.reservering_Eindtijd, datum: reservering.reservering_Datum)){
                             self.dataAankomend.append(reservering)
                         }else{
                             //Anders voeg reservering aan dataVerlopen toe
